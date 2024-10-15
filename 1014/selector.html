@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        color: blue;
+      }
+
+      .red {
+        color: red;
+      }
+
+      .big {
+        font-size: 20px;
+      }
+
+      #name {
+        color: green;
+      }
+
+      div p {
+        color: violet;
+      }
+      div > p {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="red big">나는 red 클래스의 span태그야</span>
+    <div class="red">나는 red 클래스의 div태그야</div>
+    <p>나는 p태그야</p>
+    <div>
+      <p>나는 div 안의 p태그야</p>
+    </div>
+
+    <div>
+      <article>
+        <p>div안의 article안의 p태그야</p>
+      </article>
+    </div>
+
+    <div id="name">나의 id는 name이야</div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal inpo</title>
+  </head>
+  <body>
+    <h1>개인정보 수집 폼</h1>
+    <p>아래 양식을 작성하여 개인정보를 제출하세요.</p>
+    <form>
+      <label for="name">이름</label
+      ><!--DaeJung-->
+      <input type="text" name="name" id="name" />
+      <br />
+      <label for="mail">이메일</label
+      ><!--dbseowjd123@naver.com-->
+      <input type="email" name="mail" id="mail" />
+      <br />
+      <label for="birthDate">생년월일</label
+      ><!--2000.05.27-->
+      <input type="date" name="birthdate" id="birthDate" />
+      <br />
+      <label for="male">남성</label
+      ><!--checked-->
+      <input type="radio" name="gender" id="male" value="male" />
+      <label for="female">여성</label>
+      <input type="radio" name="gender" id="female" value="female" />
+      <br />
+      <label for="agree">개인정보 수집 및 이용에 동의합니다.</label
+      ><!--checked-->
+      <input type="checkbox" name="Personal info" id="agree" value="agree" />
+      <br />
+      <button>제출</button>
+    </form>
+  </body>
+</html>
+
+<!-- http://127.0.0.1:5500/html/%EA%B3%BC%EC%A0%9C/personal.html?
+name=DaeJung
+mail=dbseowjd123%40naver.com&
+birthdate=2000-05-27&
+gender=male&
+Personal+info=agree 
+-->
