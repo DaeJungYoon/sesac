@@ -1,0 +1,44 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.company {
+  display: flex;
+  justify-content: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+main > .main-picture {
+  display: flex;
+  justify-content: center;
+}
+.big-contact > h2 {
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+}
+.contact > form {
+  border: 1px solid black;
+}
+.more {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.more > h2 {
+  display: flex;
+  justify-content: center;
+}
+.more-list {
+  display: flex;
+  justify-content: center;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
