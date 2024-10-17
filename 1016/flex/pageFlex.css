@@ -3,6 +3,13 @@
   display: flex;
   justify-content: space-between;
 }
+.top > nav > a {
+  text-decoration: none;
+}
+.main-picture {
+  display: flex;
+  justify-content: center;
+}
 /* 헤더 end*/
 
 /* company start */
@@ -10,6 +17,9 @@
   display: flex;
   justify-content: center;
   margin: 10px;
+}
+.company > img {
+  width: 40%;
 }
 .company > div {
   margin-left: 10px;
@@ -20,10 +30,6 @@
 /* company end */
 
 /* Company main content start */
-main > .main-picture {
-  display: flex;
-  justify-content: center;
-}
 main {
   display: flex;
   flex-direction: column;
@@ -32,7 +38,10 @@ main {
 .big-contact > h2 {
   text-align: center;
 }
-
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
 .contact {
   display: flex;
   justify-content: center;
@@ -60,7 +69,7 @@ main {
 }
 .more-list {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 /* company etx info end */
 
