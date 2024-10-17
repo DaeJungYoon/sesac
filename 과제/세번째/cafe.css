@@ -1,31 +1,36 @@
 .total {
   text-align: center;
+  margin: 0 auto;
+  width: 400px;
 }
 .menu {
   font-size: 50px;
   font-weight: bold;
   color: brown;
 }
-hr {
-  width: 400px;
-}
+
 .drink {
   font-size: 30px;
   font-weight: bold;
+  margin: 10px 0;
 }
-.cof-me {
+.coc {
+  display: flex;
+  justify-content: space-between;
   margin-top: 20px;
 }
-.cof-me > span {
+
+.coc > span {
   font-size: 20px;
-  margin: 40px 50px;
   line-height: 30px;
 }
-.ade-me {
+.goa {
+  display: flex;
+  justify-content: space-between;
   margin-top: 20px;
 }
-.ade-me > span {
+
+.goa > span {
   font-size: 20px;
-  margin: 40px 50px;
   line-height: 30px;
 }
