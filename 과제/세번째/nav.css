@@ -1,0 +1,13 @@
+nav {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+}
+/* .menu {
+  display: flex;
+} */
+a {
+  color: white;
+  text-decoration: none;
+  margin-left: 5px;
+}
