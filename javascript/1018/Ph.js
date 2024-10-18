@@ -9,5 +9,5 @@ if (ph > 250) {
 } else if (ph > 51) {
   console.log('좋음');
 } else {
-  console.log('아주 좋음');
+  console.log('아주 좋음good');
 }
