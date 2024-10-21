@@ -11,3 +11,9 @@ if (isWeekend === true) {
 } else {
   console.log('휴식');
 }
+
+// 주말  일과시간
+// true  true  -> 휴식
+// true  false -> 자기계발
+// false true  -> 일
+// false false -> 휴식
