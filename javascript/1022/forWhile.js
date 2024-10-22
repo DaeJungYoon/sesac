@@ -88,3 +88,12 @@ while (b < nums3.length) {
 console.log(min);
 console.log('---------while 최솟값------');
 
+const nums4 = [10, 6, 8, 5, 4];
+const newArr = [];
+for (let i = 0; i < nums4.length; i++) {
+  let arrValue = nums4[i];
+  newArr.unshift(arrValue);
+}
+console.log(newArr);
+console.log('---------for 리버스------');
+
