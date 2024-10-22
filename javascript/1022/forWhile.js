@@ -54,3 +54,13 @@ for (let i = 0; i < nums1.length; i++) {
 console.log(total);
 console.log('---------for 합계------');
 
+const nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let total2 = 0;
+let p = 0;
+while (p < nums2.length) {
+  let index1 = nums2[p];
+  p++;
+  total2 += index1;
+}
+console.log(total2);
+console.log('---------while 합계-------');
