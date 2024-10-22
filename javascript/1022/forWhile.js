@@ -1,4 +1,4 @@
-for (i = 1; i < 9 + 1; i++) {
+for (let i = 1; i < 9 + 1; i++) {
   console.log(i * 3);
 }
 console.log('---------for 3단-------');
@@ -24,4 +24,13 @@ while (index < names.length) {
   index++;
 }
 console.log('---------while 출석-------');
+
+const names1 = ['jun', 'beemo', 'ken'];
+const ages = [18, 28, 37];
+for (let i = 0; i < 3; i++) {
+  let name1 = names1[i];
+  let age = ages[i];
+  console.log(age, name1);
+}
+console.log('---------for 나이-------');
 
