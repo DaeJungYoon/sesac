@@ -77,3 +77,14 @@ for (let i = 0; i < nums3.length; i++) {
 console.log(min);
 console.log('---------for 최솟값------');
 
+let b = 0;
+while (b < nums3.length) {
+  b++;
+  let indexValue = nums3[b];
+  if (min > indexValue) {
+    min = indexValue;
+  }
+}
+console.log(min);
+console.log('---------while 최솟값------');
+
