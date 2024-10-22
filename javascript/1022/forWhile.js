@@ -97,3 +97,12 @@ for (let i = 0; i < nums4.length; i++) {
 console.log(newArr);
 console.log('---------for 리버스------');
 
+const newArr2 = [];
+let k = 0;
+while (k < nums4.length) {
+  k++;
+  let arrValue = nums4[k - 1];
+  newArr2.unshift(arrValue);
+}
+console.log(newArr2);
+console.log('---------while 리버스------');
