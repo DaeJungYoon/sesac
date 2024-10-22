@@ -64,3 +64,16 @@ while (p < nums2.length) {
 }
 console.log(total2);
 console.log('---------while 합계-------');
+
+const nums3 = [10, 6, 8, 5, 4, 2, 3, 11];
+
+let min = Infinity;
+for (let i = 0; i < nums3.length; i++) {
+  let indexValue = nums3[i];
+  if (min > indexValue) {
+    min = indexValue;
+  }
+}
+console.log(min);
+console.log('---------for 최솟값------');
+
