@@ -42,3 +42,15 @@ while (i < 3) {
   i++;
 }
 console.log('---------while 나이-------');
+
+let total = 0;
+const nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+for (let i = 0; i < nums1.length; i++) {
+  let index = nums1[i];
+  // console.log(index);
+  // console.log(total);
+  total += index;
+}
+console.log(total);
+console.log('---------for 합계------');
+
