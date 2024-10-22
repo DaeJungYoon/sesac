@@ -34,3 +34,11 @@ for (let i = 0; i < 3; i++) {
 }
 console.log('---------for 나이-------');
 
+let i = 0;
+while (i < 3) {
+  let name2 = names1[i];
+  let age2 = ages[i];
+  console.log(age2, name2);
+  i++;
+}
+console.log('---------while 나이-------');
