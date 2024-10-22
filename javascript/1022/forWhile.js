@@ -1,14 +1,14 @@
 for (i = 1; i < 9 + 1; i++) {
   console.log(i * 3);
 }
-console.log('---------for3 단-------');
+console.log('---------for 3단-------');
 
 let nums = 0;
 while (nums < 9) {
   nums++;
   console.log(nums * 3);
 }
-console.log('---------while3 단-------');
+console.log('---------while 3단-------');
 
 const names = ['jun', 'beemo', 'ken', 'lynda'];
 for (let index = 0; index < names.length; index++) {
@@ -16,3 +16,12 @@ for (let index = 0; index < names.length; index++) {
   console.log(index + 1, name);
 }
 console.log('---------for 출석-------');
+
+let index = 0;
+while (index < names.length) {
+  let name = names[index];
+  console.log(index + 1, name);
+  index++;
+}
+console.log('---------while 출석-------');
+
