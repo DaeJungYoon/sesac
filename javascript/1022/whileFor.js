@@ -6,3 +6,7 @@ while (true) {
     break;
   }
 }
+console.log('------------------');
+for (let num2 = 2; num2 < 10; num2 += 2) {
+  console.log(num2);
+}
