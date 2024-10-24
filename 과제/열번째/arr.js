@@ -21,3 +21,8 @@ const plusOdNum = arr.filter((num) => {
 });
 console.log('----------3----------');
 
+const findNum = arr.findIndex((num) => {
+  return num % 5 === 0;
+});
+console.log(findNum);
+console.log('----------4----------');
