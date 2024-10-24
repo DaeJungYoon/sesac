@@ -14,3 +14,10 @@ const multNum = arr.map((num) => {
 });
 console.log('----------2----------');
 
+const plusOdNum = arr.filter((num) => {
+  if (num > 0 && num % 2 === 1) {
+    console.log(num);
+  }
+});
+console.log('----------3----------');
+
