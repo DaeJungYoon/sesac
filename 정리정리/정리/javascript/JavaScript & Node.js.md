@@ -17,3 +17,5 @@
 #### 개발자 도구 내 console창
 - 브라우저 개발자 도구의 console 창에서 코드 실행이 가능
 - JavaScript 에서는 ***console.log("content")*** 를 활용하여 변수의 값 등을 출력
+#### HTML 내 <script> 태그
+-
