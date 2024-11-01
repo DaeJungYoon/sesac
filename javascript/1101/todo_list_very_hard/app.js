@@ -8,3 +8,22 @@ document.addEventListener('DOMContentLoaded', initTodos);
 async function initTodos() {
   console.log('Hello World');
 }
+
+
+// export const getTodos = function () {};
+
+async function getTodos() {
+  // const daejung = 'a';
+  // console.log(daejung);
+  try {
+    const response = await fetch(URL);
+    const todos = await response.json();
+    return todos;
+  } catch (error) {
+    console.log('Error', error);
+  }
+}
+async function getTodosExample() {
+  let response = await getTodos();
+  console.log(response);  
+}
