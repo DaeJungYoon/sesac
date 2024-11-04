@@ -13,6 +13,13 @@ const addTodoButton = document.querySelector('#add-todo');
 // }
 
 async function getTodos() {
+  //   <li>
+  //   <span>todo의 컨텐트</span>
+  //   <button>완료</button>
+  //   <button>삭제</button>
+  // </li>
+  // 를 만들어다가
+  // ul에 push하고 싶다.
   try {
     const response = await fetch(URL);
     const todos = await response.json();
