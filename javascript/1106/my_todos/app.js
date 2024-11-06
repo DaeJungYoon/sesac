@@ -5,6 +5,7 @@ const URL = 'http://localhost:3000/todos';
 // 페이지가 로드되면 Todo 목록 초기화 함수를 실행한다.
 document.addEventListener('DOMContentLoaded', initTodos); //DOM이 랜더링을 완료하면 initTodos를 해(즉 db를 가져와서 보여줘)
 
+// 초기값 세팅
 async function initTodos() {
   // 1. 데이터 가져오기
   const todos = await fetchTodos();
