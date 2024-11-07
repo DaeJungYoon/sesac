@@ -53,3 +53,12 @@ for gem in gems:
     grades[gem] += 1
     
 print(grades)
+
+# 리스트를 이용한 집계
+# 빈 판 만들기
+grades = [0] * 4
+
+for gem in gems:
+     grades[gem] += 1
+
+print(grades)
