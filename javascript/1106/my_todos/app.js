@@ -34,7 +34,6 @@ async function addTodo() {
   // 현재(input type, #todo-input이 있음)
   // 입력값 => 입력 태그에 입력된 값 따라서 입력태그가 필요
   //1
-  const inputTag = document.querySelector('#todo-input');
   const value = inputTag.value;
   // console.log(value); // 입력값이 잘오는지 확인
 
@@ -64,7 +63,7 @@ async function initTodos() {
   // 2. 데이터 보여주기
   // liTag 만들고
   const todoListTag = document.querySelector('#todo-list');
-  renderTodos(todoListTag, todos); 
+  renderTodos(todoListTag, todos);
   /**
    // renderTodos는 todos를 입력받아서 for문만 돌리는 역할일수도 있음
    //  todos.forEach라고 하는 것이 initTodos에 들어가는 것 보다 감싸진 형태가 좋음
@@ -73,7 +72,7 @@ async function initTodos() {
   renderTodos는 todoListTag, todos를 받는 것이 맞음
 1:56:54
    */
-  
+
   /*
   
   // li태그 만들고 todos한테 foreach를 돌리는데 todo가 addTodo() todo를 넣어서 만들지
@@ -98,7 +97,8 @@ function renderTodos(todos) {
   //         <button>삭제</button>
   //       </li>
   // 를 만들어서 ul에 push하고 싶음
-  // const todoListTag = document.querySelector('#todo-list'); 
+  // const todoListTag = document.querySelector('#todo-list');
+  const inputTag = document.querySelector('#todo-input');
 
   todos.forEach((todo) => {
     renderTodo(todoListTag, todo);
