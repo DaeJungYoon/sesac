@@ -19,6 +19,6 @@ for _ in range(n):
 # 데이셋을 역순으로 정렬 .sort() 원본 리스트 변경
 sorted_company = sorted(company, reverse=True) # sorted()원본 그대로 새로운 객체
 
-# 하나씩 축력
+# 하나씩 출력
 for member in sorted_company:
     print(member)
