@@ -8,11 +8,12 @@ export default function Header() {
         <li>
           <Link to="/">Home으로</Link>
         </li>
-        <li>
-          <Link to="/posts">게시글로</Link>
-        </li>
+
         <li>
           <Link to="/music">Music</Link>
+        </li>
+        <li>
+          <Link to="/music/list">MusicList</Link>
         </li>
       </ul>
     </header>
