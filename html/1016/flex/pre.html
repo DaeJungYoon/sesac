@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .big-contact > h2 {
+        text-align: center;
+      }
+
+      .contact {
+        display: flex;
+        justify-content: center;
+      }
+      .contact > form {
+        border: 2px solid black;
+        padding: 10px 5px;
+        margin-right: 20px;
+      }
+      .contact > form > .bt {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="big-contact">
+      <h2>Contact Us</h2>
+      <div class="contact">
+        <form>
+          <label for="">Username</label>
+          <input type="text" placeholder="Username" />
+          <label for="">Email</label>
+          <input type="email" placeholder="email" />
+          <div class="bt">
+            <input type="button" value="send" />
+          </div>
+        </form>
+        <img src="../assets/apparel3.jpg" alt="contact img" width="230px" />
+      </div>
+    </div>
+  </body>
+</html>

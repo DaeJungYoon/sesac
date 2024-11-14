@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>formprac</title>
+  </head>
+  <body>
+    <h1>숙소예약</h1>
+    <h2>신상정보</h2>
+    <form>
+      <label for="name">이름:</label>
+      <input type="text" name="username" id="name" placeholder="이름 입력" />
+      <!--yoon-->
+      <br />
+      <label for="mail">이메일:</label>
+      <input
+        type="email"
+        name="useremail"
+        id="mail"
+        placeholder="이메일 입력"
+      /><!--dbs@naver.com-->
+      <br />
+      <label for="picture">예약자 사진:</label>
+      <input type="file" name="userpicture" id="picture" /><!--green.png-->
+      <hr />
+      <h2>상세 정보</h2>
+      <h3>선호 객실 타입</h3>
+      <label for="cityview">도시뷰:</label>
+      <input
+        type="checkbox"
+        name="room type"
+        id="cityview"
+        value="cityview"
+      /><!--checked-->
+      <label for="lakeview">레이크뷰:</label>
+      <input
+        type="checkbox"
+        name="room type"
+        id="lakeview"
+        value="lakeview"
+      /><!--checked-->
+      <label for="mountainview">마운틴뷰:</label>
+      <input
+        type="checkbox"
+        name="room type"
+        id="mountainview"
+        value="mountainview"
+      />
+      <br />
+      <h3>동행자 정보</h3>
+      <label for="people">인원수:</label>
+      <input type="number" name="people" id="people" /><!--3-->
+      <br />
+      <h2>기타</h2>
+      <label for="etc">요청사항:</label>
+      <input type="text" name="request" id="etc" /><!--moer paper-->
+      <hr />
+      <input type="submit" value="전송" />
+    </form>
+  </body>
+</html>
+<!-- http://127.0.0.1:5500/html/assets/formprac.html?
+username=yoon&
+useremail=dbs%40naver.com&
+userpicture=green.png&
+room+type=cityview&
+room+type=lakeview&
+people=3&
+request=more+paper -->

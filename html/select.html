@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        color: blue;
+      }
+      .red {
+        color: red;
+      }
+      .big {
+        font-size: 20px;
+      }
+      #name {
+        color: green;
+      }
+      div p {
+        color: coral;
+      }
+      div > p {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="red big">i'm span tag with "class red" and "class big"</span>
+    <div class="red">im a div tag with "class red"</div>
+    <p>i'm a p tag</p>
+    <div>
+      <p>i'm a p tag in "div tag"</p>
+    </div>
+    <div id="name">i'm a div tag with "id name"</div>
+    <div>
+      <article>
+        <p>i'm p tag in article tag in div tag</p>
+      </article>
+    </div>
+  </body>
+</html>

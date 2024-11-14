@@ -1,0 +1,79 @@
+/* 헤더 start  */
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.top > nav > a {
+  text-decoration: none;
+}
+.main-picture {
+  display: flex;
+  justify-content: center;
+}
+/* 헤더 end*/
+
+/* company start */
+.company {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.company > img {
+  width: 40%;
+}
+.company > div {
+  margin-left: 10px;
+}
+.company > div > h2 {
+  text-align: center;
+}
+/* company end */
+
+/* Company main content start */
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0px;
+}
+.big-contact > h2 {
+  text-align: center;
+}
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
+.contact {
+  display: flex;
+  justify-content: center;
+}
+.contact > form {
+  border: 2px solid black;
+  padding: 10px 5px;
+  margin-right: 20px;
+}
+.contact > form > .bt {
+  display: flex;
+  justify-content: center;
+}
+/* Company main content end */
+
+/* company etx info start */
+.more {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.more > h2 {
+  display: flex;
+  justify-content: center;
+}
+.more-list {
+  display: flex;
+  justify-content: space-between;
+}
+/* company etx info end */
+
+footer {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        font-size: 32px;
+        color: red;
+        text-align: right;
+      }
+      .blue {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+      .green {
+        background-color: green;
+        width: 200px;
+        height: 200px;
+        color: red;
+      }
+      .green > div {
+        width: 100px;
+        height: 100px;
+        color: red;
+        background-color: aqua;
+        /* 구조화가 잘 되어있으면 이 방법이 굳 */
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <!-- 폰트사이즈 32px, 글씨 빨간색, 글씨 우측정렬 -->
+    <div class="red">Hello CSS</div>
+
+    <br />
+    <!-- 글자는 기본을 따라감 -->
+    <!-- 가로 100px, 세로 100px, 배경색 파란색 -->
+    <div class="blue">Hello CSS</div>
+
+    <br />
+    <!-- 가로 200px, 세로 200px, 배경색 초록색, 글씨 빨간색-->
+    <div class="green">
+      Hello CSS
+      <!-- 가로 100px, 세로 100px, 글씨 빨간색, 배경색 적당히-->
+      <div>Hello CSS</div>
+    </div>
+  </body>
+</html>

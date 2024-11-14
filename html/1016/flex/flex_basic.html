@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .container {
+        display: flex;
+
+        /* 세로축 정렬을 위해 컨테이너에 높이 지정이 필요 */
+        height: 200px;
+        align-items: center; /* 아이템을 세로(교차축) 중앙 정렬 */
+        border: 2px solid #333;
+        padding: 10px;
+      }
+
+      .item {
+        background-color: #6c5ce7;
+        color: white;
+        padding: 20px;
+        margin: 5px;
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">플렉스 아이템 1</div>
+      <div class="item">플렉스 아이템 2</div>
+      <div class="item">플렉스 아이템 3</div>
+      <div class="item">플렉스 아이템 4</div>
+    </div>
+  </body>
+</html>

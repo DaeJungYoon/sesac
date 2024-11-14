@@ -1,0 +1,23 @@
+<head>
+  <style>
+    .header {
+      width: 100%;
+      background-color: steelblue;
+      color: white;
+      text-align: center;
+      position: fixed;
+      /* 화면에 고정됨 */
+      top: 20px;
+    }
+    .content {
+      /* 고정된 헤더 아래의 내용이 겹치지 않도록 여백 추가 */
+      background-color: lightgray;
+      height: 1500px;
+      /* 스크롤을 위해 긴 내용 추가 */
+    }
+  </style>
+</head>
+<body>
+  <div class="header">고정된 헤더</div>
+  <div class="content">스크롤해도 이 헤더는 화면 상단에 고정된다.</div>
+</body>

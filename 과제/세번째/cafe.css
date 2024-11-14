@@ -1,0 +1,36 @@
+.total {
+  text-align: center;
+  margin: 0 auto;
+  width: 400px;
+}
+.menu {
+  font-size: 50px;
+  font-weight: bold;
+  color: brown;
+}
+
+.drink {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.coc {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.coc > span {
+  font-size: 20px;
+  line-height: 30px;
+}
+.goa {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.goa > span {
+  font-size: 20px;
+  line-height: 30px;
+}

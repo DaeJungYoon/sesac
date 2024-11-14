@@ -1,0 +1,35 @@
+<head>
+  <style>
+    .container {
+      width: 300px;
+      height: 200px;
+      margin: 50px;
+      background-color: lightgray;
+      border: 2px solid black;
+      /* 부모에 relative 적용 */
+      position: relative;
+      z-index: -100;
+    }
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background-color: lightcoral;
+      position: absolute;
+      /* 부모 위치에서 상대적으로 이동 */
+      top: 50px;
+      left: 30px;
+      z-index: -1;
+    }
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1">박스 1</div>
+    <div class="box2">박스 2</div>
+  </div>
+</body>

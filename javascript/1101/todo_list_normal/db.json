@@ -1,0 +1,9 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "content": "예습하기",
+      "completed": false
+    }
+  ]
+}
