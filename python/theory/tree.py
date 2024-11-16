@@ -9,9 +9,9 @@ for _ in range(T):  # T번 반복
 # 반복을 하며(l<r)
 while l < r:
 # cfmf rkwlrh rkwurkf tn 있는 나무의 길이
-    if length > c:
+    if length > c:  
 
-
+sdf
         #length == M
 
         #lenth > M
