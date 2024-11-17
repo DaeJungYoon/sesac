@@ -7,7 +7,7 @@ export default function RootLayout() {
     <>
       <Header></Header>
       <Outlet></Outlet>
-      <footer>footer</footer>
+      <footer>foot</footer>
     </>
   );
 }
