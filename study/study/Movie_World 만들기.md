@@ -488,11 +488,730 @@ movies={data.movies}
 ```
 커밋 내용 그대로
 # 39. [[refactor] Api 재구성 movieApi.js, movieAxios.js 리펙토링 #39](https://github.com/DaeJungYoon/Movie-world/commit/30a1ccd9351d55f056d1c9839af63c07daa5714e "[refactor] Api 재구성 movieApi.js, movieAxios.js 리펙토링 #39")
+
+```
+
+import axios from "axios";
+
+const nowPlayInstance = axios.create({
+  baseURL:
+    import.meta.env.VITE_NOW_MOVIES +
+    "/now_playing" +
+    import.meta.env.VITE_API_KEY +
+    import.meta.env.VITE_API_LANG,
+  baseURL: import.meta.env.VITE_NOW_MOVIES,
+  params: {
+    api_key: import.meta.env.VITE_API_KEY,
+    language: import.meta.env.VITE_API_LANG,
+  },
+});
+
+// baseURL: "https://api.themoviedb.org/3",
+// params: {
+//   api_key: "2211333",
+//   language: "ko-KR",
+// },
+const popularInstance = axios.create({
+  baseURL:
+    import.meta.env.VITE_NOW_MOVIES +
+    "/popular" +
+    import.meta.env.VITE_API_KEY +
+    import.meta.env.VITE_API_LANG,
+  baseURL: import.meta.env.VITE_NOW_MOVIES,
+  params: {
+    api_key: import.meta.env.VITE_API_KEY,
+    language: import.meta.env.VITE_API_LANG,
+  },
+});
+const topRatedInstance = axios.create({
+  baseURL:
+    import.meta.env.VITE_NOW_MOVIES +
+    "/top_rated" +
+    import.meta.env.VITE_API_KEY +
+    import.meta.env.VITE_API_LANG,
+  baseURL: import.meta.env.VITE_NOW_MOVIES,
+  params: {
+    api_key: import.meta.env.VITE_API_KEY,
+    language: import.meta.env.VITE_API_LANG,
+  },
+});
+// const popularInstance = axios.create({
+//   baseURL:
+//     import.meta.env.VITE_NOW_MOVIES +
+//     "/popular" +
+//     import.meta.env.VITE_API_KEY +
+//     import.meta.env.VITE_API_LANG,
+// });
+// const topRatedInstance = axios.create({
+//   baseURL:
+//     import.meta.env.VITE_NOW_MOVIES +
+//     "/top_rated" +
+//     import.meta.env.VITE_API_KEY +
+//     import.meta.env.VITE_API_LANG,
+// });
+// const movieDetailInstance = axios.create({
+//   baseURL:
+//     import.meta.env.VITE_NOW_MOVIES +
+//     `/${movie.id}` +
+//     import.meta.env.VITE_API_KEY +
+//     import.meta.env.VITE_API_LANG,
+// });
+
+// const movieDetailInstance = axios.create({
+//   baseURL: import.meta.env.VITE_NOW_MOVIES,
+```
+잘못 이해한 instance구조를 다시 알아보고 api를 재구성 
 # 40. [[refactor] key값 부여 MovieList.jsx 리펙토링 #40](https://github.com/DaeJungYoon/Movie-world/commit/dd39888725c20c66f8fd4d74e8562e7aec5df185 "[refactor] key값 부여 MovieList.jsx 리펙토링 #40")
+```
+<h2>{kategorieTitle}</h2>
+
+<p>
+        <Link to={`/kategorie/${kategorieTitle}`}>...more</Link>
+        <Link key={kategorieTitle} to={`/kategorie/${kategorieTitle}`}>
+          ...more
+        </Link>
+</p>
+<ul style={{ display: "flex" }}>
+{movies.map((item) => {
+```
+key값을 넣으라는 권고 사항이 출력되어 key값 부여
+
+key 쓸 때
+컴포넌트를 반복문을 활용하여 생성할 때
+-> react입장에서 컴포넌트도 객체로 보는데 
+-> 반복문을 활용할 때 변수를 사용하고 
+-> 컴포넌트를 생성할 때 각각의 컴포넌트가 무엇인지 알기위해 key를 사용
+
 # 41. [[refactor] key값 부여 NowPlayMore.jsx 리펙토링 #41](https://github.com/DaeJungYoon/Movie-world/commit/8ac81e27315c00d9d207c5fb72c485c6d9b0e54d "[refactor] key값 부여  NowPlayMore.jsx 리펙토링 #41")
+
+key값을 넣으라는 권고 사항이 출력되어 key값 부여
+
 # 42. [[refactor] instance 하나로 합치면서 Api 재구성 movieApi.js, movieAxios.js 리펙토링 #42](https://github.com/DaeJungYoon/Movie-world/commit/63527e19155c763127f361882cd2dc1ee50e114b "[refactor] instance 하나로 합치면서  Api 재구성 movieApi.js, movieAxios.js 리펙토링 #42")
-# 43. 
-# 44. 
+
+커밋내용 그대로 재구성을 하였고 불필요한 주석들 제거
+# 43. [[feat] detailApi 구현 movieApi.js, movieAxios.js #43](https://github.com/DaeJungYoon/Movie-world/commit/016fb026f429289b9640aff7dae427add34ae826 "[feat] detailApi 구현  movieApi.js, movieAxios.js #43")
+
+```
+import axios from "axios";
+
+const instance = axios.create({
+const movieListsInstance = axios.create({
+baseURL: import.meta.env.VITE_NOW_MOVIES,
+params: {
+api_key: import.meta.env.VITE_API_KEY,
+language: import.meta.env.VITE_API_LANG,
+},
+});
+
+
+export { instance };
+const moviesInstance = axios.create({
+  baseURL: import.meta.env.VITE_NOW_MOVIES + `/${movieId}`,
+  params: {
+    api_key: import.meta.env.VITE_API_KEY,
+  },
+});
+export { movieListsInstance, moviesInstance };
+```
+영화 상세페이지에서 사용할 데이터를 받아올 instance 구성하고 detailApi구성
+# 44. [[fix]detail api path 수정 movieApi.js #44](https://github.com/DaeJungYoon/Movie-world/commit/b3affe41dbc1eb309ed905c13a23e1825f1f911e "[fix]detail api path 수정  movieApi.js #44")
+
+
+```
+
+const detailApi = {
+getDetail: async () => {
+    const resposne = await moviesInstance.get(`/&{movieId}`);
+    const resposne = await moviesInstance.get(`/${movieId}`);
+return resposne.data;
+},
+};
+```
+커밋 내용 그대로
+# 45. [[refactor]movie id를 인자로 받아오는 것 추가 movieApi.js #45](https://github.com/DaeJungYoon/Movie-world/commit/093e24a174b110f53665c6c1695e1ac9dce759af "[refactor]movie id를 인자로 받아오는 것 추가  movieApi.js #45")
+
+
+```
+};
+
+const detailApi = {
+  getDetail: async () => {
+  getDetail: async (movieId) => {
+const resposne = await moviesInstance.get(`/${movieId}`);
+return resposne.data;
+},
+};
+
+export { nowPlayingApi, popularApi, topRatedApi };
+export { nowPlayingApi, popularApi, topRatedApi, detailApi };
+```
+기존의 상태면 어떤 것을 받아오는 지가 선언?명시가 되지 않아서 데이터를 받아올 수 없음
+# 46. [[refactor]moviesInstance import해서 받아오기 movieApi.js #46](https://github.com/DaeJungYoon/Movie-world/commit/bd03967dfddbba4f1e3896fc86772eafdb3f25c0 "[refactor]moviesInstance import해서 받아오기 movieApi.js #46")
+
+```
+import { movieListsInstance } from "./movieAxios";
+import { movieListsInstance, moviesInstance } from "./movieAxios";
+
+const nowPlayingApi = {
+getNowPlaying: async () => {
+```
+커밋 내용 그대로 import하기
+# 47. [[feat] movieDetail페이지 구현 movieDetail.jsx #47](https://github.com/DaeJungYoon/Movie-world/commit/b8dd24d1d466519b7231535b88bcefa2e41af68b "[feat] movieDetail페이지 구현  movieDetail.jsx #47")
+
+```
+@@ -0,0 +1,31 @@
+import React, { useEffect, useState } from "react";
+import { detailApi } from "../api/movieApi";
+import { useParams } from "react-router-dom";
+
+export default function movieDetail() {
+  const { movieId } = useParams();
+  const [movie, setMovie] = useState();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchMovie() {
+      try {
+        const data = await detailApi.getDetail(movieId);
+        setMovie(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchMovie();
+  }, []);
+  if (loading) return <div>Loading</div>;
+  return (
+    <>
+      <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
+      <h1>{movie.title}</h1>
+      <p>{movie.overview}</p>
+    </>
+  );
+}
+```
+detail 데이터를 받아와서 렌더링을 잘 해주는지 보기 위해 일단 poster_path와 title, overview 로 구성
+# 48. [[refactor]movieApi 재구성 movieApi.js #48](https://github.com/DaeJungYoon/Movie-world/commit/2c7b735cc45f49b7168737dcda293d4b920185f4 "[refactor]movieApi 재구성  movieApi.js #48")
+
+movidId라는 변수를 이미 사용중이라고 해서 다른 변수명 movieDetailId으로 변경
+
+# 49. [[refactor, rename] movie Id 변수명 변경&파일명 movieDetail에서 MovieDetail로 변경 movieDetail.jsx #49](https://github.com/DaeJungYoon/Movie-world/commit/bb350e144804ed96031996aa2f12d9411473e450 "[refactor, rename] movie Id 변수명 변경&파일명 movieDetail에서 MovieDetail로 변경   movieDetail.jsx #49")
+
+```
+import { detailApi } from "../api/movieApi";
+import { useParams } from "react-router-dom";
+
+export default function movieDetail() {
+  const { movieId } = useParams();
+export default function MovieDetail() {
+  const { movieDetailId } = useParams();
+const [movie, setMovie] = useState();
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+async function fetchMovie() {
+try {
+        const data = await detailApi.getDetail(movieId);
+        const data = await detailApi.getDetail(movieDetailId);
+        console.log(data);
+setMovie(data);
+} catch (err) {
+console.error(err);
+@@ -20,7 +21,7 @@ export default function movieDetail() {
+}
+fetchMovie();
+}, []);
+  if (loading) return <div>Loading</div>;
+  if (loading) return <div>...Loading...</div>;
+return (
+<>
+<img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
+```
+48번 커밋 내용과 마찬가지로 발 맞춰 변수명 변경 & JSX 파일 규칙을 지키기 위해 movieDetail에서 MovieDetail로 변경
+# 50. [[feat] movieDetail페이 router 설정 #50](https://github.com/DaeJungYoon/Movie-world/commit/bbfe2ca672752798a2c7e089299ecb9fb7860493 "[feat] movieDetail페이 router 설정  #50")
+
+```
+import NowPlayMore from "../pages/NowPlayMore";
+import PopularMore from "../pages/PopularMore";
+import TopRatedMore from "../pages/TopRatedMore";
+import MovieDetail from "../pages/movieDetail";
+
+const router = createBrowserRouter([
+{
+@@ -17,6 +18,16 @@ const router = createBrowserRouter([
+// },
+],
+},
+  {
+    path: "/movie/:movieDetailId",
+    element: <RootLayout></RootLayout>,
+    children: [
+      {
+        index: true,
+        element: <MovieDetail></MovieDetail>,
+      },
+    ],
+  },
+{
+path: "/kategorie",
+element: <RootLayout />,
+```
+영화 상세정보를 보여주는 detail 페이지를 보기위해 router설정
+# 51. [[chore]detailApi 데이터 잘 받아오는지 확인한 console.log 제거 #51](https://github.com/DaeJungYoon/Movie-world/commit/425387c2a97d281d91cf3895ff854ec71b10781c "[chore]detailApi 데이터 잘 받아오는지 확인한 console.log 제거 #51")
+
+```
+async function fetchMovie() {
+try {
+const data = await detailApi.getDetail(movieDetailId);
+        console.log(data);
+setMovie(data);
+
+} catch (err) {
+console.error(err);
+} finally {
+```
+커밋 내용 그대로
+# 52. [[feat] MovieCard 컴포넌트에서 영화를 누르면 해당 MovieDetail로 이동할 수 있도록 Link추가 #52](https://github.com/DaeJungYoon/Movie-world/commit/4209ee16270394845c9a9c833035931b3a3c6fd8 "[feat] MovieCard 컴포넌트에서 영화를 누르면 해당 MovieDetail로 이동할 수 있도록 Link추가  #52")
+
+```
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+
+export default function MovieCard(props) {
+// console.log(props);
+const { item } = props;
+
+return (
+    <li key={item.id}>
+      <img src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} />
+      <h4>{item.title}</h4>
+    </li>
+    <>
+      <Link to={`/movie/${item.id}`}>
+        <li key={item.id}>
+          <img src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} />
+          <h4>{item.title}</h4>
+        </li>
+      </Link>
+    </>
+);
+}
+```
+클릭을 하면 이동을 할 수 있도록 각 영화 id 별로 상세페이지로 이동하는 Link 구현
+# 53. [[feat] MovieDetail페이지 상세정보 리뷰 제외하고 구현 #53](https://github.com/DaeJungYoon/Movie-world/commit/a75118ac979759f62ad8aaa31521b314bc2a73e8 "[feat] MovieDetail페이지 상세정보 리뷰 제외하고  구현  #53")
+
+```
+try {
+const data = await detailApi.getDetail(movieDetailId);
+setMovie(data);
+
+} catch (err) {
+console.error(err);
+} finally {
+@@ -25,8 +24,31 @@ export default function MovieDetail() {
+return (
+<>
+<img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
+      <h1>{movie.title}</h1>
+      <p>{movie.overview}</p>
+      <ul>
+        <li>
+          <h1>제목: {movie.title}</h1>
+        </li>
+        <li>
+          <p>줄거리: {movie.overview}</p>
+        </li>
+        <li>
+          <p>상영시간: {movie.runtime}</p>
+        </li>
+        <li>
+          <p>개봉일: {movie.release_date}</p>
+        </li>
+        <li>
+          <p>평점: {movie.vote_average}</p>
+        </li>
+        <li>
+          <p>투표수: {movie.vote_count}</p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <h4>리뷰</h4>
+        </li>
+      </ul>
+</>
+);
+}
+```
+상세정보 데이터를 잘 받아오는 것을 확인했기 때문에 나머지 요소들 구현
+# 54. [[feat] movieApi review 데이터가져오는 api 추가 #54](https://github.com/DaeJungYoon/Movie-world/commit/a40d719036bb73b3e5662000b78cac8c625e0aa5 "[feat] movieApi review 데이터가져오는 api 추가 #54")
+
+```
+const nowPlayingApi = {
+getNowPlaying: async () => {
+const resposne = await movieListsInstance.get("/now_playing");
+return resposne.data.results;
+},
+};
+const popularApi = {
+getPopular: async () => {
+const resposne = await movieListsInstance.get("/popular");
+return resposne.data.results;
+},
+};
+const topRatedApi = {
+getTopRated: async () => {
+const resposne = await movieListsInstance.get("/top_rated");
+return resposne.data.results;
+},
+};
+
+const detailApi = {
+getDetail: async (movieDetailId) => {
+const resposne = await moviesInstance.get(`/${movieDetailId}`);
+return resposne.data;
+},
+  getDetailReview: async (movieDetailId) => {
+    const resposne = await moviesInstance.get(`/${movieDetailId}/reviews`);
+    return resposne.data.results;
+  },
+};
+
+export { nowPlayingApi, popularApi, topRatedApi, detailApi };
+```
+review의 데이터를 가져오려면 detail path에 reviews 만 추가하면 가져올 수 있기 때문에
+detailApi에 getDetailReview 추가
+# 55. [[feat] movieApi review 데이터가져와서 작성자 이름과 리뷰내용 가져오는 코드 추가 #55](https://github.com/DaeJungYoon/Movie-world/commit/1baa578810a86a4ca1d3806ff2f9e391e046a588 "[feat] movieApi review 데이터가져와서 작성자 이름과 리뷰내용 가져오는 코드 추가 #55")
+
+
+```
+export default function MovieDetail() {
+const { movieDetailId } = useParams();
+const [movie, setMovie] = useState();
+  const [movieReview, setMovieReview] = useState();
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+@@ -18,15 +19,29 @@ export default function MovieDetail() {
+setLoading(false);
+}
+}
+    async function fetchMovieReview() {
+      try {
+        const data = await detailApi.getDetailReview(movieDetailId);
+        for (let i in data) {
+          setMovieReview(data[i]);
+        }
+        console.log(movieReview);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+fetchMovie();
+    fetchMovieReview();
+}, []);
+if (loading) return <div>...Loading...</div>;
+return (
+<>
+<img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
+<ul>
+<li>
+          <h1>제목: {movie.title}</h1>
+          <h3>제목: {movie.title}</h3>
+</li>
+<li>
+<p>줄거리: {movie.overview}</p>
+@@ -44,10 +59,10 @@ export default function MovieDetail() {
+<p>투표수: {movie.vote_count}</p>
+</li>
+</ul>
+      <h4>리뷰</h4>
+<ul>
+        <li>
+          <h4>리뷰</h4>
+        </li>
+        <li>닉네임: {movieReview.author}</li>
+        <li>{movieReview.content}</li>
+</ul>
+</>
+);
+```
+상세정보의 제목이 너무 큰 것 같아 태그 변경
+getDetailReview의 data는 데이터구조가
+
+```
+1. Array(4)
+
+1. 0: {author: 'r96sk', author_details: {…}, content: "A solid enough send off for this <em>'Venom'</em> …Ejiofor stick out most from the other characters.", created_at: '2024-10-25T18:25:18.286Z', id: '671be28e9ff681d9e0a410bd', …}
+2. 1: {author: 'Mangoturtle', author_details: {…}, content: "The other two at the very least were enjoyable. Th…e of Eddie's flashbacks he wasn't even there for.", created_at: '2024-10-27T14:01:38.601Z', id: '671e47c2427c5c19f0264707', …}
+3. 2: {author: 'CinemaSerf', author_details: {…}, content: "Perhaps this was just one sequel too many as the s… but it's not a patch on the first one from 2018.", created_at: '2024-10-31T11:02:06.190Z', id: '672363aed9a8a77b5da47a0d', …}
+4. 3: {author: 'TurkBinge', author_details: {…}, content: 'Venom: The Last Dance expands on the chaotic relat…t go through to see but no MORE BLACK symbiote...', created_at: '2024-11-12T20:12:08.312Z', id: '6733b6982d237511a019dec1', …}
+5. length: 4
+6. [[Prototype]]: Array(0)
+```
+
+이런 배열로 들어있기 때문에 배열의 인덱스를 가져오는 것이 맞다고 판단하여 
+for 문으로 index를 뽑아 데이터를 movieReview에 넣기
+# 56. [[feat] MainPage와 LoginPage에서 사용할 Header구현 #56](https://github.com/DaeJungYoon/Movie-world/commit/da83423ffb8873f609a023a3a5d03bc028dc38ea "[feat] MainPage와 LoginPage에서 사용할 Header구현 #56")
+
+```
+@@ -0,0 +1,12 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+export default function Header() {
+  return (
+    <header>
+      <Link to="/">
+        <h1>Movie World</h1>
+      </Link>
+    </header>
+  );
+}
+```
+커밋 내용 그대로
+# 57. [[feat] MainPage와 LoginPage을 구성하는 HomeLayout구현 #57](https://github.com/DaeJungYoon/Movie-world/commit/9704fc8663a8dc83afcbe6467dc8e684f8a9ae4c "[feat] MainPage와 LoginPage을 구성하는 HomeLayout구현 #57")
+
+```
+@@ -0,0 +1,12 @@
+import React from "react";
+import { Outlet } from "react-router-dom";
+import HomeHeader from "./components/Header";
+
+export default function HomeLayout() {
+  return (
+    <>
+      <HomeHeader></HomeHeader>
+      <Outlet></Outlet>
+    </>
+  );
+}
+```
+커밋 내용 그대로인데 왜 이렇게 생각을 했냐 
+처음에 와이어 프레임을 짤 때 MainPage와 LoginPage 같은 구성을 하고 있고 나머지 페이지는 다르게 구성을 했기 때문에
+![[Pasted image 20241125201014.png]]
+![[Pasted image 20241125201040.png]]
+![[Pasted image 20241125201116.png]]
+![[Pasted image 20241125201134.png]]
+# 58. [[feat] LoginPage구현 #58](https://github.com/DaeJungYoon/Movie-world/commit/041694686d0c169f1adc6aea1cc028b585ed34a5 "[feat] LoginPage구현 #58")
+
+렌더링을 잘 해주는지 확인을 위해 임시로 구현
+# 59. [[feat] LoginPage와 MainPage의 경로를 설정하는 router 설정 추가 #59](https://github.com/DaeJungYoon/Movie-world/commit/f3fd540bb7958ef3df4b8cbd23ddc5505e2b3025 "[feat] LoginPage와 MainPage의 경로를 설정하는 router 설정 추가 #59")
+
+```
+import PopularMore from "../pages/PopularMore";
+import TopRatedMore from "../pages/TopRatedMore";
+import MovieDetail from "../pages/movieDetail";
+import HomeLayout from "../HomeLayout";
+import LoginPage from "../pages/LoginPage";
+
+const router = createBrowserRouter([
+{
+path: "/",
+    element: <MainPage />,
+    element: <HomeLayout></HomeLayout>,
+children: [
+      // {
+      //   path: "/login",
+      //   element: <Login />,
+      // },
+      {
+        index: true,
+        element: <MainPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+],
+},
+{
+```
+HomeLayout을 사용하여 MainPage와 LoginPage를 잘 나오게하고 각 경로로 잘 이동시키기 위해 router 설정
+# 60. [[refector] 자연스러운 구성을 위해 Header컴포넌트와 MainPage refactor #60](https://github.com/DaeJungYoon/Movie-world/commit/1811292389aa1a5eebe8465e5ab5feeb5a5966b4 "[refector] 자연스러운 구성을 위해  Header컴포넌트와  MainPage refactor #60")
+
+```
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
+export default function Header() {
+export default function HomeHeader() {
+return (
+<header>
+<ul>
+<li>
+<Link to="/">Movie World</Link>
+</li>
+        <button>
+          <Link to="/login">login</Link>
+        </button>
+       
+</ul>
+</header>
+);
+```
+
+
+```
+export default function MainPage() {
+return (
+<>
+      <h1>Movie World</h1>
+      <button>Login</button>
+      <Link to="/login">
+        <button>login</button>
+      </Link>
+<Link to="/kategorie">Movie ON!</Link>
+</>
+);
+```
+
+우선 Header라는 함수명에서 HomeHaeder로 변경
+HomeLayout에선 Login 버튼을 헤더에 사용하지 않기 때문에 Login 버튼은 제거하고
+MainPage에 LoginPage로 이동할수있는 Login button Link 추가
+# 61. [[chore] 필요없는 consoloe.log 제거 MovieDetail.jsx #61](https://github.com/DaeJungYoon/Movie-world/commit/36742e28bca96e9c956d9e0379b3c074b084f2b6 "[chore] 필요없는 consoloe.log 제거  MovieDetail.jsx #61")
+
+movieReview를 확인하려고 한 필요한 console.log 제거인데
+이제 보니 
+
+```
+
+export default function MovieDetail() {
+const { movieDetailId } = useParams();
+const [movie, setMovie] = useState();
+const [movieReview, setMovieReview] = useState();
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+async function fetchMovie() {
+try {
+const data = await detailApi.getDetail(movieDetailId);
+setMovie(data);
+} catch (err) {
+console.error(err);
+} finally {
+setLoading(false);
+}
+}
+async function fetchMovieReview() {
+try {
+const data = await detailApi.getDetailReview(movieDetailId);
+for (let i in data) {
+setMovieReview(data[i]);
+}
+        console.log(movieReview); // undefined여기가 아니라
+} catch (err) {
+console.error(err);
+} finally {
+setLoading(false);
+}
+}
+fetchMovie();
+fetchMovieReview();
+}, []);
+console.log(movieReview) //여기가 맞았을 듯 사실 여기도 아니고
+
+  
+
+  useEffect(() => {
+
+    console.log(movieReview);
+
+  }, [movieReview]);
+  이렇게 useEffect로 movieReview를 받아올 때 한 번만 보기 위해 해야됨
+
+if (loading) return <div>...Loading...</div>;
+return (
+<>
+<img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
+<ul>
+<li>
+<h3>제목: {movie.title}</h3>
+</li>
+<li>
+<p>줄거리: {movie.overview}</p>
+</li>
+<li>
+<p>상영시간: {movie.runtime}</p>
+</li>
+<li>
+```
+어떤 데이터를 보고 싶을때 밖에서 출력하는 것이 아닌 useEffect를 사용하여 console.log를 사용하여 출력 해야함 왜냐면 밖에서 출력하는 것은 부정확할 수 있음
+리뷰 렌더링은 반복문을 사용하여 렌더링해야함 by. map() 사용
+# 62. [[refactor] review가 하나만 나오는 것을 map을 사용하여 렌더링함 MovieDetail.jsx 리펙토링 #62](https://github.com/DaeJungYoon/Movie-world/commit/de8ebae283cb8e9f192212e49da1255cd75d1f91 "[refactor] review가 하나만 나오는 것을 map을 사용하여 렌더링함  MovieDetail.jsx 리펙토링 #62")
+
+```
+
+export default function MovieDetail() {
+const { movieDetailId } = useParams();
+const [movie, setMovie] = useState();
+  const [movieReview, setMovieReview] = useState();
+  const [movieReview, setMovieReview] = useState([]);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+@@ -22,9 +22,10 @@ export default function MovieDetail() {
+async function fetchMovieReview() {
+try {
+const data = await detailApi.getDetailReview(movieDetailId);
+        for (let i in data) {
+          setMovieReview(data[i]);
+        }
+        // for (let i in data) {
+        //   setMovieReview(data);
+        // }
+        setMovieReview(data);
+} catch (err) {
+console.error(err);
+} finally {
+@@ -34,6 +35,7 @@ export default function MovieDetail() {
+fetchMovie();
+fetchMovieReview();
+}, []);
+
+if (loading) return <div>...Loading...</div>;
+return (
+<>
+@@ -59,10 +61,15 @@ export default function MovieDetail() {
+</li>
+</ul>
+<h4>리뷰</h4>
+      <ul>
+        <li>닉네임: {movieReview.author}</li>
+        <li>{movieReview.content}</li>
+      </ul>
+      {movieReview.map((review) => {
+        return (
+          <ul key={review.id}>
+            <li>닉네임: {review.author}</li>
+            <li>{review.content}</li>
+          </ul>
+        );
+      })}
+      ;
+</>
+);
+}
+
+```
+key에러로 분명 고유한 key값을 넣었는데 안된는 것을 확인함
+고유한 key값이 맞나?
+->어떻게 출력되는 지 확인
+-> 리뷰 id인것으로 판단
+-> 고유한 값 맞음
+<></> 로 감싸져있어서 흐름상 여기에 key를 넣어야 인식을 하는 것인데 
+<></> 안에 있는 ul태그에 넣어서 key 에러 발생
+
+# 63. 
+
+
+
+
 
 
 

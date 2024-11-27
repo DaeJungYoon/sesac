@@ -105,7 +105,8 @@
 			- 이걸로 시간 너무 뺏기는 것 같은데
 			- 일단 baseURL 괜찮게 되어 ㅣㅇㅆ는듯 
 			- params(api키랑 언어설정?)를 new URLSearchParams로 이용하여 할당을 해서 써야 할 것 같음
-```
+
+```JS
 const baseURL = 'https://api.themoviedb.org/3/movie';
 
 const params = new URLSearchParams({
@@ -139,7 +140,7 @@ async function getDetailMovie(movieID) {
 ```
 
 
-```
+```JS
 import axios from "axios";
 
   
