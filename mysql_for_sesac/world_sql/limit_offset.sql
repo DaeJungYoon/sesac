@@ -1,0 +1,8 @@
+-- Active: 1732690507091@@127.0.0.1@3306@world
+SELECT * FROM city LIMIT 5;
+
+SELECT * FROM city LIMIT 5 OFFSET 10;
+
+SELECT * FROM city as c 
+ORDER BY c.Population DESC
+LIMIT 10 OFFSET 11
