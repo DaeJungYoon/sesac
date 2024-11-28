@@ -1,0 +1,2 @@
+-- Active: 1732690507091@@127.0.0.1@3306@world
+SELECT * FROM country
