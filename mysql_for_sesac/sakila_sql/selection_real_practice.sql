@@ -62,9 +62,10 @@ SELECT f.rental_rate "대여료",
 COUNT(*) "영화 수" 
 FROM film f
 GROUP BY f.rental_rate
-ORDER BY f.rental_rate DESC;
+ORDER BY "영화 수" DESC;
 
--- 9. 교체 비용별 영화 수와 평균 대여료를 교체 비용 오름차순으로 정렬하여 조회하시오.
+-- 9. 교체 비용별 영화 수와 평균 대여료를 교체 비용 
+-- 오름차순으로 정렬하여 조회하시오.
 SELECT f.replacement_cost "교체 비용", 
 COUNT(*) as "영화 수", 
 AVG(rental_rate) as "평균 대여료" 
@@ -100,7 +101,7 @@ f.rating "관람 등급",
 f.rental_duration "대여 기간" 
 FROM film f
 WHERE f.rating IN ("pg","g") 
-AND f.rental_duration<=4
+AND (f.rental_duration<=4);
 
 -- 14. 등급별 영화 수와 평균 상영 시간을 조회하시오.
 SELECT f.rating as "관람 등급",
