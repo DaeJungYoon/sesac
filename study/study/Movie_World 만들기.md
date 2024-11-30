@@ -1207,7 +1207,11 @@ key에러로 분명 고유한 key값을 넣었는데 안된는 것을 확인함
 <></> 로 감싸져있어서 흐름상 여기에 key를 넣어야 인식을 하는 것인데 
 <></> 안에 있는 ul태그에 넣어서 key 에러 발생
 
+# 63.  [[feat] kategoriePage및 RootLayout로 구성하는 페이지 헤더에 LoginPage로 이동하는 버튼 추가 #63](https://github.com/DaeJungYoon/Movie-world/commit/962e16a9ad19aad0b2b0e402f72a4a06c6d493bb "[feat] kategoriePage및 RootLayout로 구성하는 페이지 헤더에 LoginPage로 이동하는 버튼 추가 #63")
+# 64. [[refactor] LoginPage와 MainPage에서 헤더를 HomeHeader가 아닌 RootLayout에서 구성하는 Header를 그려주는 문제점 발생 HomeLayout 리펙토링 resolve: #64](https://github.com/DaeJungYoon/Movie-world/commit/05cab30519e4264919d46e08be11e156641bc1e0 "[refactor] LoginPage와 MainPage에서 헤더를 HomeHeader가 아닌 RootLayout에서 구성하는 Header를 그려주는 문제점 발생 HomeLayout 리펙토링  resolve: #64")
 # 63. 
+# 63. 
+
 
 
 
