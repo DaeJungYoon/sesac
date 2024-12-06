@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        border: 1px black solid;
+      }
+      .flex-end {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .padding {
+        padding: 20px;
+      }
+      .space-between {
+        display: flex;
+        justify-content: space-between;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .margin {
+        margin: 5px;
+      }
+      .margin-top {
+        margin: 5px 0px;
+      }
+      .width {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="box">
+      <div class="padding">
+        <h1 class="text-center">회원 가입</h1>
+        <div class="margin">
+          <label for="userName" class="flex-end">사용자 이름</label>
+          <input type="text" name="userName" class="width margin" />
+        </div>
+        <div class="margin">
+          <label for="email" class="flex-end">이메일</label>
+          <input type="email" name="email" class="width margin" />
+        </div>
+        <div class="margin">
+          <label for="password" class="flex-end">비밀번호</label>
+          <input type="password" name="password" class="width margin" />
+        </div>
+        <div class="margin">
+          <label for="passwordcheck" class="flex-end">비밀번호 확인</label>
+          <input type="password" name="passwordcheck" class="width margin" />
+        </div>
+        <div class="space-between margin-top">
+          <button>초기화</button>
+          <button>회원가입</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
