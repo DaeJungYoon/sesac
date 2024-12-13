@@ -16,12 +16,33 @@ public class Problem21 {
     class Solution {
         public static int solution(int start, int end) {
             int answer = 0;
-            for (int i=start;i<end+1;i++){
-                if(i%2!=0 && i%1==0 && i%i==0&&i!=1){
-                    answer ++;
+
+          for(int i = start; i<=end;i++){
+              if (isPrime(i)){
+                  /*isPrime 함수에 start부터 end까지의 범위의 int를 넣어어 인자로 출력하면
+                  * isPrime이 true이면 실행
+                  * */
+                  answer++;
+//                  answer에 1씩 추가
+              }
+          }
+            return answer;
+        }
+      static boolean isPrime(int i) {
+            if(i<=1){
+                return false;
+//               매개변수로 받은 i가 1보다 작거나 같으면 false 반환
+            }
+            for(int j=2;j<=Math.sqrt(i);j++){
+                if(i%j==0){
+                    return false;
+//                j가 2부터 받은 매개변수 i의 제곱근까지 1씩 증가하는데
+//                    i에서 j를 나눠 나머지가 나오지 않으면
+//                    false 를 반환
                 }
             }
-            return answer;
+            return true;
+//            기본적으로 true를 반환
         }
     }
 }
