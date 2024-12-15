@@ -10,7 +10,7 @@ public class Problem44 {
     public static void main(String[] args) {
         System.out.println(Solution.solution(5,new int[]{5,5,5,5,5,5,5}));
     }
-    public class Solution {
+    class Solution {
         public static int solution(int n, int[] numbers) {
             int answer = 0;
 
