@@ -7,19 +7,21 @@ public class Problem24 {
 //    제한 사항
 //    number는 1 이상 10^18 이하의 자연수입니다.
     public static void main(String[] args) {
-        System.out.println(Solution.solution(	12345));
+        System.out.println(Solution.solution(4,5));
 
     }
 
     class Solution {
-        public static int solution(long number) {
+        public static int solution(int start, int end) {
             int answer = 0;
-            while (number>0){
-                answer +=number%10;
-                number/=10;
-
+            for (int i = start; i <= end; i++) {
+                for (int j = 1; j <= 9; j++) {
+                    answer += i * j;
+                }
             }
+
             return answer;
         }
     }
+
 }
