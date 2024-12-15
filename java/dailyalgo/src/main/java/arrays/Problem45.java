@@ -9,29 +9,26 @@ public class Problem45 {
 //    numbers의 각 원소는 2 이상 500 이하의 자연수입니다.
 //    numbers는 비어있지 않으며, 길이가 100을 넘지 않습니다.
     public static void main(String[] args) {
-        System.out.println(Solution.solution(new int[]{5,5,5,5,5,5,5}));
+        System.out.println(Solution.solution(new int[]{2,3,4,5}));
     }
     class Solution {
 
-        public int solution(int[] numbers) {
-            int counts = 0;
-
+        public static int solution(int[] numbers) {
+            int answer = 0;
             for (int number : numbers) {
                 boolean isPrime = true;
-
                 for (int i = 2; i <= (int)Math.sqrt(number); i++) {
                     if (number % i == 0) {
                         isPrime = false;
                         break;
                     }
                 }
-
                 if (isPrime) {
-                    counts += 1;
+                    answer += 1;
                 }
             }
 
-            return counts;
+            return answer;
         }
     }
 }
