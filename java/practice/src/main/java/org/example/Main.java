@@ -1,10 +1,21 @@
 package org.example;
 
-public class Practice {
+import org.example.pract.Calc2;
 
-        public static void main(String[] args) {
+//import org.example.pract.Calc2;
+//import org.example.pract.Calc2.sum;
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+        // to see how IntelliJ IDEA suggests fixing it.
 
-//            dog
+//        Circle cl = new Circle(3);
+//        System.out.println(cl.radius);
+//        System.out.println(cl.calclateArea());
+
+        //            dog
 
 //            Dog d1 = new Dog("dog", "jelly");
 //            System.out.println(d1.kingOf);
@@ -49,42 +60,14 @@ public class Practice {
 //            System.out.println(c1.sum());
 
 //            cal2
-
-//            Circle cl = new Circle(3);
-//            System.out.println(cl.radius);
-//            System.out.println(cl.calclateArea());
-
-            int value = 3;
-            int[] array = new int[6];
-            Rectangle rect1 = new Rectangle(10,30);
-//            System.out.println(rect1.width);
-//            System.out.println(rect1.calculateArea());
+//        Calc2 c2 = new Calc2();
+        int result = Calc2.sum(1,2);
+        System.out.println(result);
+//        System.out.println(c2.sum(1,2));
+//        System.out.println(c2.minus(2,2));
+//        System.out.println(c2.divi(8,2));
+//        System.out.println(c2.mul(1,2));
 
 
-//            Rectangle rect2 = new Rectangle(10, 1000);
-//            System.out.println(rect2.calculateArea());
-//
-//            String word = new String("hahahoho");
-        }
     }
-
-    class Rectangle{
-        int width;
-        int height;
-
-        Rectangle(int width, int height){
-            this.width = width;
-            this.height = height;
-        }
-
-//        public Rectangle(int height, int width) {
-//            this.height = height;
-//            this.width = width;
-//        }
-
-        int calculateArea(){
-            return width * height;
-        }
-
-
 }
