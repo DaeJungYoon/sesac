@@ -1,6 +1,6 @@
 package org.example.abstractprac.game;
 
-public abstract class Charactor implements GetDamage {
+public abstract class Charactor {
     private String name;
     protected int level;
     protected int health;
@@ -14,8 +14,4 @@ public abstract class Charactor implements GetDamage {
     }
     public abstract void attack();
     public abstract void levelUp();
-
-    @Override
-    public void hit() {
-    }
 }

@@ -19,7 +19,7 @@ public class Warrior extends Charactor implements Rageable {
     public void levelUp() {
         level +=1;
         maxHealth += 30;
-        health +=maxHealth;
+//        health =maxHealth;
         System.out.println("worrior level up");
     }
 
