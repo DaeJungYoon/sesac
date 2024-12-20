@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Student {
-     int age;
-     String 
+     public int age;
+     public String name;
+     public Subject subject;
+
+     public Student(int age, String name) {
+          this.age = age;
+          this.name = name;
+     }
 //     public static void main(String[] args) {
 //     ArrayList<String> names = new ArrayList<>();
 //     HashMap<String, Integer>ages = new HashMap<>();
