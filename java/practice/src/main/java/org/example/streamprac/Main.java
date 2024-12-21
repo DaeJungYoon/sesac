@@ -24,6 +24,10 @@ public class Main {
 
         List<String> words = Arrays.asList("apple", "banana", "cherry", "fineapple", "apple");
 
+        List<String> longWords = words.stream().filter(w -> w.length() >= 5).collect(Collectors.toList());
+        System.out.println(longWords);
+
+
 
 
 
