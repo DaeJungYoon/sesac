@@ -27,6 +27,10 @@ public class Main {
         List<String> longWords = words.stream().filter(w -> w.length() >= 5).collect(Collectors.toList());
         System.out.println(longWords);
 
+        List<String> upperWords = words.stream().map(String::toUpperCase).collect(Collectors.toList());
+        System.out.println(upperWords);
+
+
 
 
 
