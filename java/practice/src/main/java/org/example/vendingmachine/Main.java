@@ -9,23 +9,13 @@ public class Main {
         Payments payments = new Payments(10000,Payment.CASH);
         Customer customer = new Customer("david",payments);
         ProductsManagement productsManagement = new ProductsManagement(payments);
-        productsManagement.addProduct(coke);
-        productsManagement.addProduct(coke);
-        productsManagement.addProduct(coke);
-        productsManagement.addProduct(coke);
-        productsManagement.addProduct(coke);
-        productsManagement.addProduct(soda);
-        productsManagement.addProduct(soda);
-        productsManagement.addProduct(soda);
-        productsManagement.addProduct(soda);
-        productsManagement.addProduct(soda);
-        productsManagement.addProduct(water);
-        productsManagement.addProduct(water);
-        productsManagement.addProduct(water);
-        productsManagement.addProduct(water);
+        productsManagement.addProduct(coke, 3);
+        productsManagement.addProduct(soda, 4);
+        productsManagement.addProduct(water,5);
         System.out.println(productsManagement.getProducts().toString());
         productsManagement.productFind("coke");
         productsManagement.payProduct("coke",customer.payments);
+
 
 
     }

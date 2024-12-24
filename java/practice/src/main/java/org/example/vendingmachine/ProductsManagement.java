@@ -28,9 +28,9 @@ public class ProductsManagement implements ProductAddAble,ProductByNameFindAble,
 
     // 상품 추가 기능
     @Override
-    public List<Products> addProduct(Products product) {
+    public List<Products> addProduct(Products product, int amount) {
         products.add(product);
-        product.setStockQuantity(+1);
+        product.setStockQuantity(amount);
         return products;
     }
 
