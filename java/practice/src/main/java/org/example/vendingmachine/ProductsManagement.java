@@ -39,7 +39,6 @@ public class ProductsManagement implements ProductAddAble,ProductByNameFindAble,
     public Products productFind(String productsName) {
         for(Products product : products ){
             if(product.getName().equals(productsName)){
-                System.out.println(product);
                 return product;
             }
         }
@@ -52,11 +51,15 @@ public class ProductsManagement implements ProductAddAble,ProductByNameFindAble,
     public Products payProduct(String productsName, Payments payments) {
         for (Products product : products){
             if(!(product.getStockQuantity()<=0)){
-            product.setStockQuantity(-1);
-            sales += product.getPrice();
+                int a =product.getStockQuantity();
+                product.setStockQuantity(a -1);
+                sales += product.getPrice();
+                System.out.println(productsName+" out!");
+            }else {
+                System.out.println("none StockQuantity");
             }
         }
-        System.out.println(productsName+" out!");
+
         return null;
     }
 

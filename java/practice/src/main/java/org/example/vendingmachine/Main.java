@@ -13,8 +13,18 @@ public class Main {
         productsManagement.addProduct(soda, 4);
         productsManagement.addProduct(water,5);
         System.out.println(productsManagement.getProducts().toString());
-        productsManagement.productFind("coke");
+        System.out.println(productsManagement.productFind("coke").getStockQuantity());
         productsManagement.payProduct("coke",customer.payments);
+        System.out.println(productsManagement.productFind("coke").getStockQuantity());
+        productsManagement.payProduct("coke",customer.payments);
+        System.out.println(productsManagement.productFind("coke").getStockQuantity());
+        productsManagement.payProduct("coke",customer.payments);
+        System.out.println(productsManagement.productFind("coke").getStockQuantity());
+        productsManagement.payProduct("coke",customer.payments);
+        System.out.println(productsManagement.productFind("coke").getStockQuantity());
+
+
+
 
 
 
