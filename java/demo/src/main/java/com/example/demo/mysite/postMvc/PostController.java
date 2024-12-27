@@ -27,4 +27,15 @@ public class PostController {
         return postService.readPostById(id);
     }
 
+    @GetMapping("/{id}")
+    public Post updatePost(@PathVariable Long id, @RequestBody Post updatedPost){
+        return postService.updatepost(id,updatedPost);
+    }
+
+    @GetMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletePost(@PathVariable Long id){
+        postService.deletePost(id);
+    }
+
 }

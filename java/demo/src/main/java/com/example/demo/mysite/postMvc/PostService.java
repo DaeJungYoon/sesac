@@ -33,9 +33,48 @@ public class PostService {
 
     public Post readPostById(Long id){
         Post post = postRepository.findById(id);
+//        if(post == null){
+//            throw new IllegalArgumentException("none id");
+//        }
+        checkPostIsNull(post);
+        return post;
+    }
+
+    //
+    public Post updatepost(Long id, Post updatePost){
+        Post post = postRepository.findById(id);
+//        if(post == null){
+//            throw new IllegalArgumentException("none id");
+//        }
+        checkPostIsNull(post);
+        validatePostData(updatePost);
+        return postRepository.modify(id,updatePost);
+    }
+
+    public void deletePost(Long id){
+        Post post = postRepository.findById(id);
+        checkPostIsNull(post);
+
+        postRepository.delete(post);
+    }
+
+    public void checkPostIsNull(Post post){
         if(post == null){
             throw new IllegalArgumentException("none id");
         }
-        return post;
     }
+
+    public void validatePostData(Post post){
+        String title = post.getTitle();
+        String content = post.getContent();
+
+        if(title == null || title.isBlank()){
+            throw new RuntimeException("title을 입력해주세요");
+        }
+        if(content == null || content.isBlank()){
+            throw new IllegalArgumentException("content를 입력해주세요");
+        }
+    }
+
+
 }

@@ -34,4 +34,25 @@ public class PostRepository {
         }
         return null;
     }
+
+    // 게시글 수정
+    public Post modify(Long id, Post updatedPost){
+        String title = updatedPost.getTitle();
+        String content = updatedPost.getContent();
+        for (Post post : posts) {
+            if(post.getId().equals(id)){
+//                post.setContent("수정된 제목");
+//                post.setTitle("수정된 제목");
+                post.setTitle(title);
+                post.setContent(content);
+                return post;
+            }
+        }
+        return null;
+    }
+
+    // 게시글 삭제
+    public void delete(Post post){
+        posts.remove(post);
+    }
 }
