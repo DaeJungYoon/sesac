@@ -17,10 +17,14 @@ public class PostController {
         return postService.createPost(newPost);
     }
 
-
     @GetMapping
     public List<Post> readPosts(){
         return postService.readPosts();
+    }
+
+    @GetMapping("/{id}")
+    public Post readPostById(@PathVariable Long id){
+        return postService.readPostById(id);
     }
 
 }

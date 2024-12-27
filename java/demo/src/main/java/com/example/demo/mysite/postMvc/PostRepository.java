@@ -24,4 +24,14 @@ public class PostRepository {
     public List<Post> findAll(){
         return posts;
     }
+
+    // 단일 게시글
+    public Post findById(Long id){
+        for (Post post : posts){
+            if(post.getId().equals(id)){
+                return post;
+            }
+        }
+        return null;
+    }
 }

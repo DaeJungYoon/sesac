@@ -30,4 +30,12 @@ public class PostService {
     public List<Post> readPosts(){
         return postRepository.findAll();
     }
+
+    public Post readPostById(Long id){
+        Post post = postRepository.findById(id);
+        if(post == null){
+            throw new IllegalArgumentException("none id");
+        }
+        return post;
+    }
 }
