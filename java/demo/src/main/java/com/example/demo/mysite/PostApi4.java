@@ -34,7 +34,13 @@ public class PostApi4 {
 
         String title = newPost.getTitle();
         String content = newPost.getContent();
+        if(title == null || title.isBlank()){
+            throw new RuntimeException("title을 입력해주세요");
+        }
 
+        if(content == null || content.isBlank()){
+            throw new IllegalArgumentException("content를 입력해주세요");
+        }
 //        Post post=new Post(++id, "title", "content");
         Post post=new Post(++id,title, content);
         posts.add(post);
