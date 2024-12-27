@@ -33,6 +33,7 @@ public class ProductApi4 {
 
         String name = newProduct.getName();
         int price = newProduct.getPrice();
+
         if (name == null || name.isBlank()){
             throw new RuntimeException("상품명 name을 입력하세요");
         }
@@ -80,14 +81,17 @@ public class ProductApi4 {
     @PutMapping("/{id}")
 //    postman으로 수정한 상품명과 가격을 받아서 사용하고 싶음
     public Product updateProducts(@PathVariable Long id, @RequestBody Product updatedProduct){
+
         String name = updatedProduct.getName();
         int price = updatedProduct.getPrice();
+
         if(name == null || name.isBlank()){
             throw new IllegalArgumentException("상품명 name을 입력해주세요");
         }
         if(price <= 0){
             throw new IllegalArgumentException("가격 price를 0보다 크게 입력해주세요");
         }
+
         for(Product product : products){
             if(product.getId().equals(id)){
                 product.setName(name);
