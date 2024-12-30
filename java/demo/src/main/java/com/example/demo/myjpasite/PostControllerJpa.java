@@ -27,4 +27,9 @@ public class PostControllerJpa {
     public PostJpa getPostById(@PathVariable Long id){
         return postServiceJps.getPostById(id);
     }
+
+    @PutMapping("/{id}")
+    public PostJpa updatePost(@PathVariable Long id, @RequestBody PostJpa updatedPost){
+        return postServiceJps.updatePost(id, updatedPost);
+    }
 }

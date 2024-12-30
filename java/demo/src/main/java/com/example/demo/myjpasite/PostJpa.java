@@ -22,4 +22,11 @@ public class PostJpa {
     private String content;
     // 여기까지 demodb와 연결될 준비가 됨
 
+//     title, content에 대한 setter
+    public PostJpa update(String title, String content){
+        this.title= title;
+        this.content = content;
+
+        return this;
+    }
 }
