@@ -1,9 +1,8 @@
 package com.example.demo.myjpasite;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/jpa/posts")
@@ -17,5 +16,15 @@ public class PostControllerJpa {
     @PostMapping
     public PostJpa createPost(@RequestBody PostJpa newPost){
         return postServiceJps.createPost(newPost);
+    }
+
+    @GetMapping
+    public List<PostJpa> getPosts(){
+        return postServiceJps.getPosts();
+    }
+
+    @GetMapping("/{id}")
+    public PostJpa getPostById(@PathVariable Long id){
+        return postServiceJps.getPostById(id);
     }
 }
