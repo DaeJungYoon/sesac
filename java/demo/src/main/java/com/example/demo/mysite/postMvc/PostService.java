@@ -1,11 +1,22 @@
 package com.example.demo.mysite.postMvc;
 
 import com.example.demo.mysite.Post;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//Bean으로 만들기
+@Service
 public class PostService {
-    PostRepository postRepository = new PostRepository();
+//    PostRepository postRepository = new PostRepository();
+
+    // DI
+    PostRepository postRepository;
+
+    // 생성자 주입
+    public PostService(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
     // 컨트롤러에게서 data를 입력받아서
     public Post createPost(Post newPost){

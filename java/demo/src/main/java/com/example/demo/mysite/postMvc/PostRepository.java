@@ -1,13 +1,18 @@
 package com.example.demo.mysite.postMvc;
 
 import com.example.demo.mysite.Post;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Repository
 public class PostRepository {
     private List<Post> posts = new ArrayList<>();
     private Long id = 0L;
+    // 주입받을 것이 없기 때문에 현재는 생성자가 필요없음
+
 
     //저장, create 그 자체
     public Post save(Post newPost){
