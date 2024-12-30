@@ -37,8 +37,8 @@ public class PostServiceJps {
 
         post.update(title, content);
 //        post.수정해.(title, content)를 가지고
-        postRepositoryJpa.save(post);
+        return postRepositoryJpa.save(post);
 
-        return postRepositoryJpa.save(post.update(title,content));
+//        return postRepositoryJpa.save(post.update(title,content));
     }
 }
