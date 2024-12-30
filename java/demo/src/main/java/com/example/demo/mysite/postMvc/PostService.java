@@ -11,7 +11,7 @@ public class PostService {
 //    PostRepository postRepository = new PostRepository();
 
     // DI
-    PostRepository postRepository;
+    private final PostRepository postRepository;
 
     // 생성자 주입
     public PostService(PostRepository postRepository) {

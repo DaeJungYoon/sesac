@@ -13,7 +13,7 @@ public class PostController {
 
 
     //DI
-   PostService postService;
+   private final PostService postService;
 
    // 생성자 주입
     public PostController(PostService postService) {
