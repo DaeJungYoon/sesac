@@ -16,17 +16,15 @@ public class PostJpaV2 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-//
-//
+
     private String title;
     private String content;
-//    // 여기까지 demodb와 연결될 준비가 됨
-//
-////     title, content에 대한 setter
-//    public PostJpaV2 update(String title, String content){
-//        this.title= title;
-//        this.content = content;
-//
-//        return this;
-//    }
+
+    // title, content에 대한 setter
+    public PostJpaV2 update(String title, String content){
+        this.title= title;
+        this.content = content;
+
+        return this;
+    }
 }
