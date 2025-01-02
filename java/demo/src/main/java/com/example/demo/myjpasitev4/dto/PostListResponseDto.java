@@ -9,29 +9,22 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class PostResponseDto {
+public class PostListResponseDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private final Long id;
 
     private final String title;
-    private final String content;
-    private final String author;
 
 //    public PostResponseDto(PostV4 entity) {
 //        this(entity.getId(),...)
 //    }
 //    이렇게 가능은 함
 
-    public static PostResponseDto from(PostV4 entity){
+    public static PostListResponseDto from(PostV4 entity){
 //        return new PostResponseDto(entity.getI(),entity.getContent(), entity.getAuthor())
-        return PostResponseDto.builder()
+        return PostListResponseDto.builder()
                 .id(entity.getId())
-                .title(entity.getTitle())
-                .content(entity.getContent())
-                .author(entity.getAuthor())
                 .build();
-
     }
-
 }
