@@ -33,6 +33,7 @@ public class PostV4 {
     public PostV4 update(PostUpdateRequestDto requestDto){
         this.title = requestDto.getTitle();
         this.content = requestDto.getContent();
+        this.author = requestDto.getAuthor();
         return this;
     }
 }
