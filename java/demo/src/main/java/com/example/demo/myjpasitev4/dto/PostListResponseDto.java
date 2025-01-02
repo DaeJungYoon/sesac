@@ -25,6 +25,7 @@ public class PostListResponseDto {
 //        return new PostResponseDto(entity.getI(),entity.getContent(), entity.getAuthor())
         return PostListResponseDto.builder()
                 .id(entity.getId())
+                .title(entity.getTitle())
                 .build();
     }
 }
