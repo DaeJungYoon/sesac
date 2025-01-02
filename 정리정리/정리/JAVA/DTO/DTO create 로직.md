@@ -1,0 +1,13 @@
+client로 부터 입력받은 게시글 데이터는 PostCreateRequestDto에 
+- controller
+	- 
+	- 입력:request DTO
+	- call : service(입력)
+- Service
+	- 입력 : request DTO
+	- request DTO => Post entity            -toEntity - builder 활용
+	- Post save => repository.save()
+	- 저장된 Post => response DTO        -from 정적 팩토리 메서드          
+	- 응답:  response DTO                        
+- Controller
+	- 응답: service의 return: response DTO
