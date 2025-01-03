@@ -4,6 +4,7 @@ import com.example.demo.myjpasitev4.dto.PostCreateRequestDto;
 import com.example.demo.myjpasitev4.dto.PostListResponseDto;
 import com.example.demo.myjpasitev4.dto.PostResponseDto;
 import com.example.demo.myjpasitev4.dto.PostUpdateRequestDto;
+import com.example.demo.myjpasitev4.exceptions.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -44,7 +45,7 @@ public class PostServiceJpaV4 {
 
     public PostResponseDto readPostById(Long id){
         PostV4 post = postRepositoryJpaV4.findById(id)
-                .orElseThrow(()->new IllegalArgumentException());
+                .orElseThrow(()->new ResourceNotFoundException());
         return PostResponseDto.from(post);
     }
 
