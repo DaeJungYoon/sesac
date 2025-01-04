@@ -4,52 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "58814e33789602bc",
+        "id": "f8e3c739324d03c3",
         "type": "tabs",
         "children": [
           {
-            "id": "0d6c828ceb9d7cc3",
+            "id": "48c0f1d14973cc6a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAVA/DI(Dependency Injection).md",
+                "file": "JAVA/Optional.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DI(Dependency Injection)"
+              "title": "Optional"
             }
           },
           {
-            "id": "4f0c740e14452d29",
+            "id": "eaf4250f04af14cb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAVA/DTO/DTO v3.md",
+                "file": "JAVA/entity/EntityManager.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DTO v3"
+              "title": "EntityManager"
             }
           },
           {
-            "id": "291d848e5b6d475d",
+            "id": "28c44dd1f1e3e1d8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "특강/해야 할 알아야 할.md",
+                "file": "JAVA/데이터의 흐름.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "해야 할 알아야 할"
+              "title": "데이터의 흐름"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -110,7 +111,82 @@
   "right": {
     "id": "388b20b77fb015ed",
     "type": "split",
-    "children": [],
+    "children": [
+      {
+        "id": "fe50ff7f0b08cfd0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f8f56c9636c589a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "JAVA/데이터의 흐름.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "데이터의 흐름의 백링크"
+            }
+          },
+          {
+            "id": "46ba648ed263c77c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "JAVA/데이터의 흐름.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "데이터의 흐름의 나가는 링크"
+            }
+          },
+          {
+            "id": "644ce1c3daa4c2a3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "a8b046f1526dcc7d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "JAVA/데이터의 흐름.md"
+              },
+              "icon": "lucide-list",
+              "title": "데이터의 흐름 개요"
+            }
+          },
+          {
+            "id": "9699a722e2680d45",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Timeline"
+            }
+          }
+        ]
+      }
+    ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
@@ -158,62 +234,62 @@
           }
         ],
         "direction": "vertical",
-        "x": 3068,
-        "y": 410,
-        "width": 481,
-        "height": 482,
-        "maximize": true,
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 816,
+        "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "0d6c828ceb9d7cc3",
+  "active": "28c44dd1f1e3e1d8",
   "lastOpenFiles": [
-    "JAVA/Spring 컨테이너, 의존성/Spring Bean.md",
-    "JAVA/Spring 컨테이너, 의존성/Spring 컨테이너.md",
-    "JAVA/Spring 컨테이너, 의존성/컨테이너와 의존성 주입.md",
-    "JAVA/DTO/캐싱, 객체 풀링.md",
-    "JAVA/무제 폴더",
-    "JAVA/관심사 분리/JAVA Spring mvc.md",
-    "JAVA/DTO/DTO v2.md",
-    "JAVA/DTO/DTO.md",
-    "JAVA/DTO/DTO v3.md",
-    "특강/해야 할 알아야 할.md",
-    "JAVA/DTO/DTO create 로직.md",
+    "JAVA/entity/EntityManager.md",
+    "JAVA/데이터의 흐름.md",
     "JAVA/그림클라이언트와 서버 요청 응답 그림.md",
-    "JAVA/JPA/JPA.md",
-    "JAVA/JPA/Spring 영속성.md",
-    "JAVA/trouble/20241230 mapping.md",
-    "JAVA/DI(Dependency Injection).md",
+    "JAVA/Optional.md",
+    "algorithms/무제 파일.md",
+    "JAVA/스트림.md",
+    "JAVA/열거형.md",
     "JAVA/트랜잭션(Transaction).md",
-    "git/github.md",
-    "git/review.md",
-    "algorithms/1주차/알고리즘 수업 시작.md",
-    "Excalidraw/layout.md",
-    "Excalidraw/store 이해하려고 한 듯.md",
-    "Excalidraw/store 이해하려고 한 듯.md",
-    "Excalidraw/sampleErd.md",
-    "Excalidraw/Drawing 2024-12-31 09.09.56.excalidraw.md",
-    "Excalidraw/무제 파일.md",
+    "JAVA/DI(Dependency Injection).md",
+    "JAVA/Validate.md",
+    "JAVA/Web Server.md",
+    "errHandle.md",
+    "JAVA/JPA/JPA.md",
+    "JAVA/entity/Entity.md",
+    "특강/해야 할 알아야 할.md",
+    "JAVA/Bean Validation/Bean Validation.md",
+    "JAVA/어노테이션/Lombok/@RequiredArgsConstructor.md",
+    "JAVA/어노테이션/Lombok/@AllArgsConstructor.md",
+    "JAVA/어노테이션/Lombok/@Builder.md",
+    "JAVA/Lombok/Lombok.md",
+    "JAVA/Lombok",
+    "JAVA/어노테이션/Spring/@RestControllerAdvice.md",
+    "JAVA/Bean Validation",
+    "JAVA/어노테이션/Lombok/@NoArgsConstructor.md",
+    "JAVA/어노테이션/Lombok/@Getter.md",
+    "JAVA/어노테이션/Spring/@RequestParam.md",
+    "JAVA/어노테이션/Spring/@RestController.md",
+    "JAVA/어노테이션/Spring/@Service.md",
+    "JAVA/어노테이션/Jackson",
+    "JAVA/어노테이션/Test",
+    "JAVA/어노테이션/Spring/Spring Security",
+    "JAVA/어노테이션/Spring/Spring Web",
+    "JAVA/어노테이션/Spring/Spring Core",
+    "JAVA/어노테이션/Bean Validation",
+    "JAVA/어노테이션/JAVA 기본",
+    "JAVA/entity",
+    "img/wep flow.png",
+    "img/image.webp",
     "img/Pasted image 20241011094412.png",
-    "img/layout/Router.md",
-    "img/layout",
     "img/err/Pasted image 20241122110033.png",
     "img/err/Pasted image 20241122110432.png",
-    "img/err",
     "img/java/Pasted Image 20241230111305_294.png",
     "img/java/Pasted image 20241230135111.png",
-    "img/java",
     "img/sql_img/Pasted image 20241129140202.png",
     "img/sql_img/Pasted image 20241129140224.png",
-    "img/sql_img/Pasted image 20241129140235.png",
-    "img/sql_img/image.png",
-    "img",
-    "프로젝트/미니",
-    "프로젝트",
-    "특강",
-    "잡",
-    "JAVA/DI",
-    "아이1유.jpg"
+    "img/sql_img/Pasted image 20241129140235.png"
   ]
 }
