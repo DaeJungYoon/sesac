@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Builder
 public class PostListResponseDto {
@@ -15,6 +17,8 @@ public class PostListResponseDto {
     private final Long id;
 
     private final String title;
+    private final LocalDateTime createdAt;
+    private final LocalDateTime updatedAt;
 
 //    public PostResponseDto(PostV4 entity) {
 //        this(entity.getId(),...)
@@ -26,6 +30,8 @@ public class PostListResponseDto {
         return PostListResponseDto.builder()
                 .id(entity.getId())
                 .title(entity.getTitle())
+                .createdAt(entity.getCreatedAt())
+                .updatedAt(entity.getUpdatedAt())
                 .build();
     }
 }
