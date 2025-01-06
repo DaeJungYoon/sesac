@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -15,6 +17,13 @@ public class UserService {
     @Transactional
     public UserResponseDto createdUser(UserCreateRequestDto userCreateRequestDto){
         User user = userRepository.save(userCreateRequestDto.toEntity());
+        return UserResponseDto.from(user);
+    }
+
+    @Transactional
+    public UserResponseDto findById(Long id){
+        User user=userRepository.findById(id)
+                .orElseThrow(()->new RuntimeException());
         return UserResponseDto.from(user);
     }
 }
