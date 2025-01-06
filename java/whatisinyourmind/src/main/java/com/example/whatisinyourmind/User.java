@@ -30,7 +30,7 @@ public class User extends BaseTimeEntity{
     private boolean isActive;
 
     @Builder
-    public User(String username, String email, String nickname, int age, boolean isActive) {
+    public User(String username, String email, String nickname, int age) {
         this.username = username;
         this.email = email;
         this.nickname = nickname;
