@@ -1,6 +1,7 @@
 package com.example.whatisinyourmind;
 
 import com.example.whatisinyourmind.dto.request.UserCreateRequestDto;
+import com.example.whatisinyourmind.dto.response.UserListResponseDto;
 import com.example.whatisinyourmind.dto.response.UserResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,15 @@ public class UserService {
         User user=userRepository.findById(id)
                 .orElseThrow(()->new RuntimeException());
         return UserResponseDto.from(user);
+    }
+
+    @Transactional
+    public List<UserListResponseDto> getUsers(){
+        return userRepository.findAll()
+                .stream()
+                .map(UserListResponseDto::from)
+                .toList();
+
+
     }
 }
