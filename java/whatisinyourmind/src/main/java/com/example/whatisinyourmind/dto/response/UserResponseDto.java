@@ -22,7 +22,7 @@ public class UserResponseDto {
     private final String nickname;
     private final int age;
     private final LocalDateTime createdAt;
-    private final LocalDateTime updateAt;
+    private final LocalDateTime updatedAt;
 
     public static UserResponseDto from(User entity){
         return UserResponseDto.builder()
@@ -32,7 +32,7 @@ public class UserResponseDto {
                 .nickname(entity.getNickname())
                 .age(entity.getAge())
                 .createdAt(entity.getCreatedAt())
-                .updateAt(entity.getUpdatedAt())
+                .updatedAt(entity.getUpdatedAt())
                 .build();
     }
 }
