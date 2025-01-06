@@ -21,7 +21,7 @@ public class UserService {
     }
 
     @Transactional
-    public UserResponseDto findById(Long id){
+    public UserResponseDto getUserById(Long id){
         User user=userRepository.findById(id)
                 .orElseThrow(()->new RuntimeException());
         return UserResponseDto.from(user);
