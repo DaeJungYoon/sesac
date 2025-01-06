@@ -31,7 +31,6 @@ public class UserCreateRequestDto {
             ,message = "0~150 범위 내의 숫자를 입력해주세요")
     private int age;
 
-    @NotBlank(message = "활성화 여부는 필수 입력값입니다.")
     private boolean isActive;
 
     public User toEntity(){
@@ -40,7 +39,6 @@ public class UserCreateRequestDto {
                 .email(this.email)
                 .nickname(this.nickname)
                 .age(this.age)
-                .isActive(this.isActive)
                 .build();
     }
 }
