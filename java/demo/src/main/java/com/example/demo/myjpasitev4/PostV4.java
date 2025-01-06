@@ -1,10 +1,7 @@
 package com.example.demo.myjpasitev4;
 
 import com.example.demo.myjpasitev4.dto.PostUpdateRequestDto;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,6 +15,7 @@ public class PostV4 extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String title;
     private String content;
     private String author;
