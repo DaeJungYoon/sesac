@@ -44,4 +44,11 @@ public class UserService {
         user.update(requestDto);
         return UserResponseDto.from(user);
     }
+
+    @Transactional
+    public void deleteUser(Long id){
+        User user = userRepository.findById(id)
+                .orElseThrow(()->new IllegalArgumentException());
+        userRepository.delete(user);
+    }
 }
