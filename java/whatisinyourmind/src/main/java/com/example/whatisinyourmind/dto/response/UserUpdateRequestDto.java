@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class UserUpdateResponseDto {
+public class UserUpdateRequestDto {
     private String email;
     private String nickname;
     private int age;

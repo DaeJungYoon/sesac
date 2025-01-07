@@ -1,5 +1,6 @@
 package com.example.whatisinyourmind;
 
+import com.example.whatisinyourmind.dto.response.UserUpdateRequestDto;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -36,5 +37,13 @@ public class User extends BaseTimeEntity{
         this.nickname = nickname;
         this.age = age;
         this.isActive = true;
+    }
+
+    public User update(UserUpdateRequestDto requestDto){
+        this.age = requestDto.getAge();
+        this.email = requestDto.getEmail();
+        this.nickname = requestDto.getNickname();
+        this.isActive = requestDto.isActive();
+        return this;
     }
 }
