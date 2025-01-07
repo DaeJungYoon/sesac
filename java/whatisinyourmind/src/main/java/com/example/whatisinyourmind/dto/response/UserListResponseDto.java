@@ -20,12 +20,14 @@ public class UserListResponseDto {
     private final String nickname;
     private final LocalDateTime createdAt;
     private final LocalDateTime updatedAt;
+    private final boolean isActive;
     public static UserListResponseDto from(User entity){
         return UserListResponseDto.builder()
                 .id(entity.getId())
                 .nickname(entity.getNickname())
                 .createdAt(entity.getCreatedAt())
                 .updatedAt(entity.getUpdatedAt())
+                .isActive(entity.isActive())
                 .build();
     }
 }

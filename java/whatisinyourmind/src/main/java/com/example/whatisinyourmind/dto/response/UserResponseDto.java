@@ -23,6 +23,7 @@ public class UserResponseDto {
     private final int age;
     private final LocalDateTime createdAt;
     private final LocalDateTime updatedAt;
+    private final boolean isActive;
 
     public static UserResponseDto from(User entity){
         return UserResponseDto.builder()
@@ -33,6 +34,7 @@ public class UserResponseDto {
                 .age(entity.getAge())
                 .createdAt(entity.getCreatedAt())
                 .updatedAt(entity.getUpdatedAt())
+                .isActive(entity.isActive())
                 .build();
     }
 }
