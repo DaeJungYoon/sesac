@@ -5,6 +5,7 @@ import com.example.relation.domain.comment.CommentRepository;
 import com.example.relation.domain.post.dto.*;
 import com.example.relation.global.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,6 +35,14 @@ public class PostService {
 //        comments 특정 post id를 가지고 있는 comments
         List<Comment> comments =commentRepository.findByPostId(id);
         return PostWithCommentResponseDto.from(post,comments);
+    }
+
+    public PostWithCommentResponseDtoV2 readPostByIdV2(Long id){
+//        post, comment를 한 번에 가져오고 싶다.
+       Post post = postRepository.findByIdWithComment(id)
+               .orElseThrow(() -> new ResourceNotFoundException());
+       return PostWithCommentResponseDtoV2.from(post);
+//        dto로 변경해서 return 한다.
     }
 
     @Transactional

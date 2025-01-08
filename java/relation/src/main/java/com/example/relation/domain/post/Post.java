@@ -29,7 +29,7 @@ public class Post extends BaseTimeEntity {
     private String author;
 
     @OneToMany(mappedBy = "post")
-    private List<Comment> comment;
+    private List<Comment> comments;
     @Builder
     public Post(String title, String content, String author) {
         this.title = title;
