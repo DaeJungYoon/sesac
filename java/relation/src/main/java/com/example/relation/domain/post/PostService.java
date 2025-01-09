@@ -4,8 +4,17 @@ import com.example.relation.domain.comment.Comment;
 import com.example.relation.domain.comment.CommentRepository;
 import com.example.relation.domain.post.dto.*;
 import com.example.relation.domain.post.entity.Post;
+import com.example.relation.domain.post.entity.PostTag;
+import com.example.relation.domain.post.repository.PostTagRepository;
+import com.example.relation.domain.tag.Tag;
+import com.example.relation.domain.tag.TagRepository;
+import com.example.relation.domain.tag.dto.TagRequestDto;
+import com.example.relation.domain.tag.dto.TagResponseDto;
 import com.example.relation.global.exception.ResourceNotFoundException;
+import com.example.relation.global.response.ApiResponse;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.Response;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +26,8 @@ import java.util.List;
 public class PostService {
     private final PostRepository postRepository;
     private final CommentRepository commentRepository;
+    private final TagRepository tagRepository;
+    private final PostTagRepository postTagRepository;
 
     @Transactional
     public PostResponseDto createPost(PostCreateRequestDto requestDto) {
@@ -80,5 +91,30 @@ public class PostService {
 
     public List<PostListWithCommentCountResponseDto> readPostsWithCommentCountDto(){
         return postRepository.findAllWithCommentCountDTO();
+    }
+
+    @Transactional
+    public TagResponseDto addTagToPost(Long id, TagRequestDto tagRequestDto){
+
+        Post post = postRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException());
+
+
+        Tag tag = tagRepository.findByName(tagRequestDto.getName())
+                .orElseThrow(()-> new ResourceNotFoundException());
+
+        PostTag postTag = new PostTag();
+
+        postTag.addTag(tag);
+        postTag.addPost(post);
+
+        postTagRepository.save(postTag);
+        return TagResponseDto.from(tag);
+    }
+
+    public PostWithCommentAndTagResponseDto  readPostsByIdWithCommentAndTag(Long id){
+        Post post = postRepository.findByIdWithCommentAndTag(id).orElseThrow(()-> new ResourceNotFoundException());
+
+        return PostWithCommentAndTagResponseDto.from(post);
     }
 }

@@ -1,6 +1,7 @@
 package com.example.relation.domain.post;
 
 import com.example.relation.domain.post.dto.*;
+import com.example.relation.domain.tag.dto.TagRequestDto;
 import com.example.relation.global.response.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -78,6 +79,22 @@ public class PostController {
                 postService.readPostsWithCommentCountDto()
         ));
     }
+
+    // post와 tag를 가지고 연결시켜주기
+
+    @PostMapping("/{id}/tags")
+    public void addTagToPost(@PathVariable Long id,
+                             @Valid @RequestBody TagRequestDto tagRequestDto
+    ) {
+      postService.addTagToPost(id, tagRequestDto);
+    }
+
+    @PostMapping("/{id}/detail")
+    public PostWithCommentAndTagResponseDto readPostsByIdWithCommentAndTag(@PathVariable long id){
+        return postService.readPostsByIdWithCommentAndTag(id);
+    }
+
+
 
 }
 
