@@ -5,7 +5,6 @@ import com.example.relation.domain.comment.CommentRepository;
 import com.example.relation.domain.post.dto.*;
 import com.example.relation.global.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -58,5 +57,27 @@ public class PostService {
         Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException());
 
         postRepository.delete(post);
+    }
+
+    public List<PostListWithCommentCountResponseDto> readPostsWithCommentCount(){
+        List<Object[]> results = postRepository.findAllWithCommentCount();
+        return results.stream().
+                map(
+                        result -> {
+                            Post post = (Post) result[0];
+                            Long CommentCount = (Long) result[1];
+                            return new PostListWithCommentCountResponseDto(
+                                    post.getId(),
+                                    post.getTitle(),
+                                    post.getCreatedAt(),
+                                    CommentCount
+                            );
+                        })
+                .toList();
+
+    }
+
+    public List<PostListWithCommentCountResponseDto> readPostsWithCommentCountDto(){
+        return postRepository.findAllWithCommentCountDTO();
     }
 }
