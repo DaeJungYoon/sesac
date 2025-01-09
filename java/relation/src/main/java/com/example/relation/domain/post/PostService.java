@@ -11,15 +11,11 @@ import com.example.relation.domain.tag.TagRepository;
 import com.example.relation.domain.tag.dto.TagRequestDto;
 import com.example.relation.domain.tag.dto.TagResponseDto;
 import com.example.relation.global.exception.ResourceNotFoundException;
-import com.example.relation.global.response.ApiResponse;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -120,5 +116,11 @@ public class PostService {
         List<Comment> comments = commentRepository.findByPostId(id);
 
         return PostWithCommentAndTagResponseDto.from(postWithTag,comments);
+    }
+
+    public PostWithCommentAndTagResponseDtoV2 readPostsByIdWithCommentAndTagV2(Long id){
+        Post post = postRepository.findByIdWithCommentAndTag(id).orElseThrow(()-> new ResourceNotFoundException());
+        return PostWithCommentAndTagResponseDtoV2.from(post);
+
     }
 }

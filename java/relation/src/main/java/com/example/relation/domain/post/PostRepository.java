@@ -46,9 +46,13 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     List<PostListWithCommentCountResponseDto> findAllWithCommentCountDTO();
 
     @Query("SELECT p FROM Post p " +
-            "LEFT JOIN FETCH p.comments c " +
-            "LEFT JOIN FETCH p.postTags pt " +
-            "LEFT JOIN FETCH pt.tag " +
+            "LEFT JOIN p.comments c " +
+            "LEFT JOIN p.postTags pt " +
+            "LEFT JOIN pt.tag " +
+            // batch size 글로벌 설정 때문에 가능
+//            "LEFT JOIN FETCH p.comments c " +
+//            "LEFT JOIN FETCH p.postTags pt " +
+//            "LEFT JOIN FETCH pt.tag " +
             "WHERE p.id = :id")
     Optional<Post> findByIdWithCommentAndTag(@Param("id") Long id);
 
