@@ -29,7 +29,7 @@ public class Post extends BaseTimeEntity {
 
     private String author;
 
-    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
     private List<Comment> comments = new ArrayList<>();
     @Builder
     public Post(String title, String content, String author) {
