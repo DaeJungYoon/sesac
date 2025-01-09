@@ -3,6 +3,7 @@ package com.example.relation.domain.post;
 import com.example.relation.domain.comment.Comment;
 import com.example.relation.domain.comment.CommentRepository;
 import com.example.relation.domain.post.dto.*;
+import com.example.relation.domain.post.entity.Post;
 import com.example.relation.global.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

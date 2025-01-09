@@ -1,6 +1,7 @@
 package com.example.relation.domain.post;
 
 import com.example.relation.domain.post.dto.PostListWithCommentCountResponseDto;
+import com.example.relation.domain.post.entity.Post;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

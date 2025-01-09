@@ -1,4 +1,4 @@
-package com.example.relation.domain.post;
+package com.example.relation.domain.post.entity;
 
 import com.example.relation.domain.comment.Comment;
 import com.example.relation.domain.post.dto.PostUpdateRequestDto;
@@ -8,7 +8,6 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
