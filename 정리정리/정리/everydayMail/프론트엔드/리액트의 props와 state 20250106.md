@@ -1,4 +1,4 @@
-## 리액트의 props와 state에 대해서 설명해주세요.
+## [리액트의 props와 state에 대해서 설명해주세요.](https://www.maeil-mail.kr/question/16)
 
 프론트엔드와 관련된 질문이에요.
 

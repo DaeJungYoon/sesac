@@ -1,4 +1,4 @@
-## 리액트의 Controlled Component와 Uncontrolled Component의 차이점에 대해서 설명해주세요.
+## [리액트의 Controlled Component와 Uncontrolled Component의 차이점에 대해서 설명해주세요.](https://www.maeil-mail.kr/question/17)
 
 프론트엔드와 관련된 질문이에요.
 

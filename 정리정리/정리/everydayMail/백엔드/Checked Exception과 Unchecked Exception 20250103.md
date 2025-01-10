@@ -1,4 +1,4 @@
-## 자바에서 Checked Exception과 Unchecked Exception에 대해서 설명해주세요.
+## [자바에서 Checked Exception과 Unchecked Exception에 대해서 설명해주세요.](https://www.maeil-mail.kr/question/50)
 
 백엔드와 관련된 질문이에요.
 
