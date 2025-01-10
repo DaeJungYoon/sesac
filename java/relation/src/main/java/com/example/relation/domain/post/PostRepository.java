@@ -57,5 +57,11 @@ public interface PostRepository extends JpaRepository<Post, Long> {
             "LEFT JOIN FETCH pt.tag " +
             "WHERE p.id = :id")
     Optional<Post> findByIdWithTag(@Param("id") Long id);
+
+    @Query("SELECT p FROM Post p " +
+            "JOIN p.postTags pt " +
+            "JOIN pt.tag t " +
+            "WHERE t.name = :tagName")
+   List<Post> findAllByTagName(@Param("tagName") String tagName);
 }
 

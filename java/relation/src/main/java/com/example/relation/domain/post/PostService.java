@@ -123,4 +123,11 @@ public class PostService {
         return PostWithCommentAndTagResponseDtoV2.from(post);
 
     }
+
+    public List<PostListResponseDto> readPostsByTag(String tagName){
+        return postRepository.findAllByTagName(tagName).stream()
+                .map(
+                        PostListResponseDto::from
+                ).toList();
+    }
 }
