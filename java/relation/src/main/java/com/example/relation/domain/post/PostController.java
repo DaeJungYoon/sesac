@@ -46,6 +46,7 @@ public class PostController {
 
     }
 
+    // imageUrl도 가져올 수 있도록 구현
     @GetMapping("/v2/{id}")
     public ResponseEntity<ApiResponse<PostWithCommentResponseDtoV2>> readPostByIdV2(@PathVariable Long id) {
         ApiResponse<PostWithCommentResponseDtoV2> response = ApiResponse.ok(postService.readPostByIdV2(id));
