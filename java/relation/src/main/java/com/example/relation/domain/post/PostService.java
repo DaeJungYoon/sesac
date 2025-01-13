@@ -30,7 +30,7 @@ public class PostService {
     private final CommentRepository commentRepository;
     private final TagRepository tagRepository;
     private final PostTagRepository postTagRepository;
-    private FileService fileService;
+    private final FileService fileService;
 
     @Transactional
     public PostResponseDto createPost(PostCreateRequestDto requestDto) {
