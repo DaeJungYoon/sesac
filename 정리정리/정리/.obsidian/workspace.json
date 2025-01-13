@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAVA/어노테이션/JPA/@GeneratedValue.md",
+                "file": "everydayMail/백엔드/JPA에서 ID 생성 전략 20250113.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "@GeneratedValue"
+              "title": "JPA에서 ID 생성 전략 20250113"
             }
           },
           {
@@ -239,37 +239,6 @@
     "type": "floating",
     "children": [
       {
-        "id": "43cce0a8396cb095",
-        "type": "window",
-        "children": [
-          {
-            "id": "4d11f74efba80c96",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "06f5c2f5d9f6bb52",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "JAVA/그림클라이언트와 서버 요청 응답 그림.md"
-                  },
-                  "icon": "excalidraw-icon",
-                  "title": "그림클라이언트와 서버 요청 응답 그림"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 1920,
-        "y": 216,
-        "width": 960,
-        "height": 816,
-        "maximize": false,
-        "zoom": 0
-      },
-      {
         "id": "0f0881eff2ed77e1",
         "type": "window",
         "children": [
@@ -295,8 +264,8 @@
           }
         ],
         "direction": "vertical",
-        "x": 0,
-        "y": 0,
+        "x": 1920,
+        "y": -8,
         "width": 1004,
         "height": 1032,
         "maximize": false,
@@ -304,29 +273,35 @@
       }
     ]
   },
-  "active": "d3dcd83aecd2d4cc",
+  "active": "c4ca3988bf338f35",
   "lastOpenFiles": [
+    "everydayMail/백엔드/JPA에서 ID 생성 전략 20250113.md",
+    "everydayMail/프론트엔드/리액트의 Strict Mode 20250113.md",
+    "everydayMail/프론트엔드/브라우저 렌더링 파이프라인 20250109.md",
+    "everydayMail/프론트엔드/클로저 20241230.md",
+    "everydayMail/프론트엔드/이벤트 루프 20250103.md",
+    "everydayMail/프론트엔드/리액트의 props와 state 20250106.md",
+    "everydayMail/프론트엔드/실행 컨텍스트 20250101.md",
+    "everydayMail/프론트엔드/reflow와 repaint의 차이점 20241231.md",
+    "JAVA/JPQL/여기서 처음부터 다시 fetchType(EAGER).md",
+    "JAVA/JPQL/FETCH,  Batch 차이 prototype fetchType(LAZY).md",
+    "JAVA/케스케이드(Cascade).md",
+    "JAVA/더티 체킹.md",
+    "JAVA/어노테이션/JPA/@GeneratedValue.md",
+    "JAVA/그림클라이언트와 서버 요청 응답 그림.md",
     "JAVA/슈퍼미니프로젝트/트러블슈팅/UserCreate 구현하고 POST 요청 후 응답문제.md",
     "JAVA/슈퍼미니프로젝트/실습 내용.md",
     "JAVA/슈퍼미니프로젝트/설계.md",
     "JAVA/어노테이션/Spring/@PathVariable.md",
     "JAVA/어노테이션/Lombok/@Builder.md",
-    "JAVA/어노테이션/JPA/@GeneratedValue.md",
     "JAVA/어노테이션/Lombok/@AllArgsConstructor.md",
     "JAVA/어노테이션/Lombok/@Getter.md",
     "JAVA/어노테이션/Lombok/@NoArgsConstructor.md",
     "JAVA/슈퍼미니프로젝트/트러블슈팅",
-    "JAVA/그림클라이언트와 서버 요청 응답 그림.md",
     "JAVA/JPA/JPA 시작하기/엔티티 매핑.md",
     "JAVA/어노테이션/Spring/@RequestBody.md",
     "JAVA/어노테이션/Bean Validation/@Valid.md",
     "JAVA/어노테이션/Lombok/@RequiredArgsConstructor.md",
-    "JAVA/Optional.md",
-    "JAVA/어노테이션/Spring/@PostMapping.md",
-    "JAVA/어노테이션/JPA/@Column.md",
-    "JAVA/JPA/JPA를 이용한 CRUD/JPA를 이용한 CRUD.md",
-    "JAVA/JPA/JPA를 이용한 CRUD/EntityManagerDraw.md",
-    "JAVA/어노테이션/JPA/@Entity.md",
     "Pasted image 20250106114210.png",
     "Pasted image 20250106114130.png",
     "JAVA/슈퍼미니프로젝트/img/Pasted image 20250106114032.png",
@@ -334,13 +309,7 @@
     "JAVA/슈퍼미니프로젝트/img/Pasted image 20250106113419.png",
     "JAVA/슈퍼미니프로젝트/img",
     "JAVA/슈퍼미니프로젝트/img/Pasted image 20250106113818.png",
-    "JAVA/데이터의 흐름.md",
     "JAVA/슈퍼미니프로젝트",
-    "everydayMail/프론트엔드/리액트의 props와 state.md",
-    "everydayMail/백엔드/일급 컬렉션.md",
-    "JAVA/entity/EntityManager.md",
-    "algorithms/무제 파일.md",
-    "JAVA/스트림.md",
     "JAVA/Lombok",
     "JAVA/Bean Validation",
     "JAVA/어노테이션/Jackson",
