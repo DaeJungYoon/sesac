@@ -143,4 +143,9 @@ public class PostService {
                 PostListResponseDto::from
         ).toList();
     }
+    public PostListWithPageResponseDto readPostsWithPageDetail(Pageable pageable){
+        return PostListWithPageResponseDto.from(
+                postRepository.findAll(pageable)
+        );
+    }
 }

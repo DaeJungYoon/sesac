@@ -123,11 +123,17 @@ public class PostController {
     public ResponseEntity<ApiResponse<List<PostListResponseDto>>> readPostsWithPage(Pageable pageable){
         return ResponseEntity.ok(ApiResponse.ok(
                 postService.readPostsWithPage(pageable)
-        )
+                )
         );
-
     }
 
+    @GetMapping("/pages/detail")
+    public ResponseEntity<ApiResponse<PostListWithPageResponseDto>> readPostsWithPageDetail(Pageable pageable){
+        return ResponseEntity.ok(ApiResponse.ok(
+                postService.readPostsWithPageDetail(pageable)
+                )
+        );
+    }
 }
 
 
