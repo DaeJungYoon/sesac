@@ -5,10 +5,7 @@ import com.example.relation.domain.post.dto.PostUpdateRequestDto;
 import com.example.relation.domain.tag.Tag;
 import com.example.relation.global.entity.BaseTimeEntity;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.BatchSize;
 
 import java.util.ArrayList;
@@ -29,6 +26,9 @@ public class Post extends BaseTimeEntity {
     private String content;
 
     private String author;
+
+    @Setter
+    private String imageUrl;
 
     @BatchSize(size = 100)
     @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)

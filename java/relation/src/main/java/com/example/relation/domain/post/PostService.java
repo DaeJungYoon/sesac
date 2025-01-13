@@ -11,12 +11,15 @@ import com.example.relation.domain.tag.Tag;
 import com.example.relation.domain.tag.TagRepository;
 import com.example.relation.domain.tag.dto.TagRequestDto;
 import com.example.relation.domain.tag.dto.TagResponseDto;
+import com.example.relation.global.common.service.FileService;
 import com.example.relation.global.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.List;
 
 @Service
@@ -27,6 +30,7 @@ public class PostService {
     private final CommentRepository commentRepository;
     private final TagRepository tagRepository;
     private final PostTagRepository postTagRepository;
+    private FileService fileService;
 
     @Transactional
     public PostResponseDto createPost(PostCreateRequestDto requestDto) {
@@ -155,5 +159,20 @@ public class PostService {
                 .getContent().stream().map(
                         PostWithCommentResponseDtoV2::from
                 ).toList();
+    }
+
+    @Transactional
+    public PostWithImageResponseDto createPostWithImage(PostCreateRequestDto requestDto, MultipartFile image){
+
+        String imageUrl = null;
+
+        if(image != null && !image.isEmpty()){
+            imageUrl= fileService.saveFile(image);
+        }
+
+        Post post = requestDto.toEntity();
+        post.setImageUrl(imageUrl);
+        postRepository.save(post);
+        return PostWithImageResponseDto.from(post);
     }
 }

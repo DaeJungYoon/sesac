@@ -1,6 +1,7 @@
 package com.example.relation.domain.post;
 
 import com.example.relation.domain.post.dto.*;
+import com.example.relation.domain.post.entity.Post;
 import com.example.relation.domain.tag.dto.TagRequestDto;
 import com.example.relation.global.response.ApiResponse;
 import jakarta.validation.Valid;
@@ -10,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.List;
 
 @RestController
@@ -141,6 +144,18 @@ public class PostController {
                         postService.readPostsWithCommentPage(pageable)
                 )
         );
+    }
+
+    @PostMapping("/images")
+    public ResponseEntity<ApiResponse<PostWithImageResponseDto>> createPostWithImage(
+           @RequestPart(value = "data") PostCreateRequestDto requestDto,
+           @RequestPart(value = "image", required = false) MultipartFile image
+    ) {
+        return ResponseEntity.ok(ApiResponse.ok(
+                postService.createPostWithImage(requestDto,image)
+        )
+        );
+
     }
 }
 
