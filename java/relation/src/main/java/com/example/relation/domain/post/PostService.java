@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 @Service
@@ -129,5 +130,17 @@ public class PostService {
                 .map(
                         PostListResponseDto::from
                 ).toList();
+    }
+    public List<PostWithCommentAndTagResponseDtoV2> readPostsWithCommentByTag(String tagName){
+        return postRepository.findAllByTagName(tagName).stream()
+                .map(
+                        PostWithCommentAndTagResponseDtoV2::from
+                ).toList();
+    }
+
+    public List<PostListResponseDto> readPostsWithPage(Pageable pageable){
+       return postRepository.findAll(pageable).getContent().stream().map(
+                PostListResponseDto::from
+        ).toList();
     }
 }

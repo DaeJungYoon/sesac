@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 @RestController
@@ -111,6 +112,21 @@ public class PostController {
         ));
     }
 
+    @GetMapping("/tags/all")
+    public ResponseEntity<ApiResponse<List<PostWithCommentAndTagResponseDtoV2>>> readPostsWithCommentByTag(@RequestParam String tagName){
+        return ResponseEntity.ok(ApiResponse.ok(
+                postService.readPostsWithCommentByTag(tagName)
+        ));
+    }
+
+    @GetMapping("/pages")
+    public ResponseEntity<ApiResponse<List<PostListResponseDto>>> readPostsWithPage(Pageable pageable){
+        return ResponseEntity.ok(ApiResponse.ok(
+                postService.readPostsWithPage(pageable)
+        )
+        );
+
+    }
 
 }
 
