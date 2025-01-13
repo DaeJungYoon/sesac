@@ -18,6 +18,7 @@ public class PostWithCommentResponseDtoV2 {
     private final LocalDateTime createdAt;
     private final LocalDateTime updatedAt;
     private final List<CommentResponseDto> comments;
+    private final String imageUrl;
 
     public static PostWithCommentResponseDtoV2 from(Post entity) {
         return PostWithCommentResponseDtoV2.builder()
@@ -32,6 +33,7 @@ public class PostWithCommentResponseDtoV2 {
                 )
                 .createdAt(entity.getCreatedAt())
                 .updatedAt(entity.getUpdatedAt())
+                .imageUrl(entity.getImageUrl())
                 .build();
     }
 }
