@@ -134,6 +134,14 @@ public class PostController {
                 )
         );
     }
+
+    @GetMapping("/detail/pages")
+    public ResponseEntity<ApiResponse<List<PostWithCommentResponseDtoV2>>> readPostsWithCommentPage(Pageable pageable){
+        return ResponseEntity.ok(ApiResponse.ok(
+                        postService.readPostsWithCommentPage(pageable)
+                )
+        );
+    }
 }
 
 

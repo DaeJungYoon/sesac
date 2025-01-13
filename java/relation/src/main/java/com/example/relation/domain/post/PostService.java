@@ -5,6 +5,7 @@ import com.example.relation.domain.comment.CommentRepository;
 import com.example.relation.domain.post.dto.*;
 import com.example.relation.domain.post.entity.Post;
 import com.example.relation.domain.post.entity.PostTag;
+import com.example.relation.domain.post.repository.PostRepository;
 import com.example.relation.domain.post.repository.PostTagRepository;
 import com.example.relation.domain.tag.Tag;
 import com.example.relation.domain.tag.TagRepository;
@@ -147,5 +148,12 @@ public class PostService {
         return PostListWithPageResponseDto.from(
                 postRepository.findAll(pageable)
         );
+    }
+
+    public List<PostWithCommentResponseDtoV2> readPostsWithCommentPage(Pageable pageable){
+        return postRepository.findPostWithCommentPage(pageable)
+                .getContent().stream().map(
+                        PostWithCommentResponseDtoV2::from
+                ).toList();
     }
 }
