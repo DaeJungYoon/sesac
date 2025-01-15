@@ -1,10 +1,17 @@
 package com.example.relation.domain.user.service;
 
 import com.example.relation.domain.user.UserRepository;
+import com.example.relation.domain.user.dto.request.LoginRequestDto;
 import com.example.relation.domain.user.dto.request.SignupRequestDto;
-import com.example.relation.domain.user.dto.request.SignupResponseDto;
+import com.example.relation.domain.user.dto.response.SignupResponseDto;
+import com.example.relation.domain.user.dto.response.TokenResponseDto;
 import com.example.relation.domain.user.entity.User;
+import com.example.relation.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +22,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class AuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+
+    private final AuthenticationManager authenticationManager;
+    private final JwtTokenProvider jwtTokenProvider;
 
     @Transactional
     public SignupResponseDto signup(SignupRequestDto requestDto){
@@ -32,5 +42,19 @@ public class AuthService {
 
 
         return SignupResponseDto.from(userRepository.save(user));
+    }
+
+
+    public TokenResponseDto login(LoginRequestDto requestDto){
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        requestDto.getUsername(),
+                        requestDto.getPassword()
+                )
+        );
+//        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = jwtTokenProvider.createToken(authentication);
+
+        return new TokenResponseDto(jwt);
     }
 }

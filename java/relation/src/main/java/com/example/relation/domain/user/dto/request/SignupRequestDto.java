@@ -20,7 +20,7 @@ public class SignupRequestDto {
     @Length(min = 2, message = "최소 2글자 입력해주세요.")
     private String username;
 
-    @NotBlank(message = "아이디는 필수 입력값입니다.")
+    @NotBlank(message = "패스워드는 필수 입력값입니다.")
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$",
             message =  "비밀번호는 8자 이상, 영문, 숫자, 특수문자를 포함해야 합니다.")
     private String password;
@@ -32,7 +32,7 @@ public class SignupRequestDto {
     public User toEntity(String encodedPassword){
         return User.builder()
                 .username(this.username)
-                .password(this.password)
+                .password(encodedPassword)
                 .email(this.email)
                 .role(Role.ROLE_USER)
                 .build();

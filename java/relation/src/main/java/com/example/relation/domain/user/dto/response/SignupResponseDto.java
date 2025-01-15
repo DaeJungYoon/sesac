@@ -1,4 +1,4 @@
-package com.example.relation.domain.user.dto.request;
+package com.example.relation.domain.user.dto.response;
 
 import com.example.relation.domain.user.entity.Role;
 import com.example.relation.domain.user.entity.User;

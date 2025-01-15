@@ -1,7 +1,9 @@
 package com.example.relation.domain.user.controller;
 
+import com.example.relation.domain.user.dto.request.LoginRequestDto;
 import com.example.relation.domain.user.dto.request.SignupRequestDto;
-import com.example.relation.domain.user.dto.request.SignupResponseDto;
+import com.example.relation.domain.user.dto.response.SignupResponseDto;
+import com.example.relation.domain.user.dto.response.TokenResponseDto;
 import com.example.relation.domain.user.service.AuthService;
 import com.example.relation.global.response.ApiResponse;
 import jakarta.validation.Valid;
@@ -30,5 +32,15 @@ public class AuthController {
                         authService.signup(requestDto)
                         )
                 );
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<ApiResponse<TokenResponseDto>> login(
+            //@GetMapping 으로는 body를 사용할 수 없음
+            @Valid @RequestBody LoginRequestDto requestDto
+            ){
+        return ResponseEntity.ok(ApiResponse.ok(
+                authService.login(requestDto)
+        ));
     }
 }
