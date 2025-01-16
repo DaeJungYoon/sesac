@@ -1,0 +1,28 @@
+package com.example.relation.domain.user.controller;
+
+import com.example.relation.domain.user.dto.response.SignupResponseDto;
+import com.example.relation.domain.user.entity.User;
+import com.example.relation.domain.user.service.UserService;
+import com.example.relation.global.response.ApiResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequiredArgsConstructor
+public class UserController {
+    private final UserService userService;
+
+    @GetMapping("/my/profile")
+    public ResponseEntity<ApiResponse<SignupResponseDto>> getMyProfile(){
+//        여차저차해서 return user 정보
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = (User) authentication.getPrincipal();
+        return ResponseEntity.ok(ApiResponse.ok(
+            userService.getMyProfile(user)
+        ));
+    }
+}
