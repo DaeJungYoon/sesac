@@ -3,6 +3,7 @@ package com.example.relation.domain.post;
 import com.example.relation.domain.post.dto.*;
 import com.example.relation.domain.tag.dto.TagRequestDto;
 import com.example.relation.domain.user.entity.User;
+import com.example.relation.domain.user.service.UserService;
 import com.example.relation.global.response.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PostController {
     private final PostService postService;
-
+    private final UserService userService;
     @PostMapping
     public ResponseEntity<ApiResponse<PostResponseDto>> createPost(@Valid @RequestBody PostCreateRequestDto requestDto) {
         return ResponseEntity
@@ -165,6 +166,16 @@ public class PostController {
             @AuthenticationPrincipal User user
     ){
         return postService.createPost2(requestDto, user);
+    }
+
+    @GetMapping("/my/posts")
+    public ResponseEntity<ApiResponse<Post2ListWithPageResponseDto>> getMyPosts(
+            @AuthenticationPrincipal User user,
+            Pageable pageable
+    ){
+        return ResponseEntity.ok(ApiResponse.ok(
+                userService.getMyPosts(user, pageable)
+        ));
     }
 
 }
