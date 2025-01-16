@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
     private final UserRepository userRepository;
 
-    public SignupResponseDto getMyProfile(User user){
+    public UserResponseDto getMyProfile(User user){
         return UserResponseDto.from(user);
     }
 }

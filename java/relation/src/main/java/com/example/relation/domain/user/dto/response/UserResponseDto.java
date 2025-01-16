@@ -13,8 +13,8 @@ public class UserResponseDto {
     private String email;
     private Role role;
 
-    public static SignupResponseDto from(User entity){
-        return SignupResponseDto.builder()
+    public static UserResponseDto from(User entity){
+        return UserResponseDto.builder()
                 .username(entity.getUsername())
                 .email(entity.getEmail())
                 .role(entity.getRole())
