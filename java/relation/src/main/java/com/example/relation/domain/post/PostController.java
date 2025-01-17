@@ -96,9 +96,11 @@ public class PostController {
       postService.addTagToPost(id, tagRequestDto);
     }
 
-    @PostMapping("/{id}/detail")
-    public PostWithCommentAndTagResponseDto readPostsByIdWithCommentAndTag(@PathVariable Long id){
-        return postService.readPostsByIdWithCommentAndTag(id);
+    @GetMapping("/{id}/detail")
+    public ResponseEntity<ApiResponse<PostWithCommentAndTagResponseDto>> readPostsByIdWithCommentAndTag(@PathVariable Long id){
+        return ResponseEntity.ok(ApiResponse.ok(
+            postService.readPostsByIdWithCommentAndTag(id)
+            ));
     }
 
     @GetMapping("/{id}/detail/v2")
