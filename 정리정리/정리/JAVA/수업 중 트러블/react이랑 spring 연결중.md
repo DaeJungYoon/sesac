@@ -33,5 +33,15 @@ private List<Comment> comments;
 @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)  
 private List<Comment> comments = new ArrayList<>();
 ```
-빈 배열에 넣어야하는 데 
+**처음에 들은 원인(쉽게 생각)**
+- 빈 배열에 넣어야하는 데 
 이 빈 배열조차 없어 넣지를 못해서 생긴오류
+
+**다시 생각하니 원인 이런 로직이 맞는 것 같음**
+- Post에 있는 comments를 가져와야하는데 그 comments가 null이라 오류가 생겼다.
+-> getComments라는 메서드를 실행하는데 가져오는 동작 자체가 null 이라 에러가 난거임?
+좀 어색한데
+- 메서드 실행 결과가  null인거 아닌가?
+- 이 Null을 가지고 setPost와 같은 동작을 하려고 해서 오류가 발생
+- 그니까 getComments() 할 때 null이 나오는 것은 문제가 안 되지만 이 Null을 가지고 setPost()해서 생긴 오류이다.
+- NullPoint
