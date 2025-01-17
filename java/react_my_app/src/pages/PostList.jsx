@@ -16,14 +16,17 @@ export default function PostList() {
       // // data.data <- posts
       // setPosts(date.data);
       try {
+        // 정상 로직
         const response = await postApi.getPosts();
         const data = response.data;
 
         setPosts(data.data);
       } catch (err) {
+        //에러가 발생했을 시
         setError(err.message);
         console.error(err.responase);
       } finally {
+        // 둘 다의 경우 로딩이 끝난다다
         setLoading(false);
       }
     }
