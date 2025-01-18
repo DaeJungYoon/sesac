@@ -34,6 +34,7 @@ export default function PostCreate() {
       try {
         const response = await post2Api.createPost(formData);
         const data = response.data;
+        console.log(data)
         const id = data.data.id;
         navigate(`/my-page`);
       } catch (err) {

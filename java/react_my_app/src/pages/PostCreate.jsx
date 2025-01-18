@@ -32,6 +32,10 @@ export default function PostCreate() {
     async function createPost() {
       try {
         // 게시글 생성 로직
+        const response = await postApi.createPost(formData);
+        const data = response.data;
+        const id = data.data.id;
+        navigate(`/posts/${id}`);
       } catch (err) {
         console.log(err);
       }

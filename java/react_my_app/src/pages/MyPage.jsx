@@ -12,6 +12,7 @@ export default function MyPage() {
       try {
         const response = await post2Api.getMyPosts();
         const data = response.data;
+        console.log(data)
 
         setPosts(data.data.posts);
       } catch (err) {

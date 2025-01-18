@@ -13,6 +13,11 @@ const authApi = {
     const response = await api.post(`${ENDPOINT}/login`, formData);
     return response;
   },
+    // jwt 검사
+    verify: async () => {
+      const response = await api.get(`${ENDPOINT}/verify`);
+      return response;
+    },
 };
 
 export default authApi;
