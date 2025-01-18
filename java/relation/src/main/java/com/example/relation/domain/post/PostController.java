@@ -163,22 +163,20 @@ public class PostController {
 
     }
     @PostMapping("/post2")
-    public Post2ResponseDto createPost2(
+    public ResponseEntity<ApiResponse<Post2ResponseDto>> createPost2(
             @RequestBody Post2CreateRequestDto requestDto,
             @AuthenticationPrincipal User user
     ){
-        return postService.createPost2(requestDto, user);
+        return  ResponseEntity.ok(
+                ApiResponse.ok(
+                        postService.createPost2(requestDto, user)
+                )
+        );
+
+
     }
 
-    @GetMapping("/my/posts")
-    public ResponseEntity<ApiResponse<Post2ListWithPageResponseDto>> getMyPosts(
-            @AuthenticationPrincipal User user,
-            Pageable pageable
-    ){
-        return ResponseEntity.ok(ApiResponse.ok(
-                userService.getMyPosts(user, pageable)
-        ));
-    }
+
 
 }
 

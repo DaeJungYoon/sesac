@@ -44,6 +44,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
+                                .requestMatchers("/auth/verify").authenticated()
                         .requestMatchers("/auth/**","/err/**","/images/**").permitAll()
                                 .requestMatchers(HttpMethod.GET, SecurityPathConfig.PUBLIC_GET_URLS).permitAll()
 //                        .requestMatchers(HttpMethod.GET,"/posts/**").permitAll()

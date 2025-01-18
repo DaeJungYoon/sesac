@@ -1,10 +1,12 @@
 package com.example.relation.domain.user.controller;
 
+import com.example.relation.domain.post.dto.Post2ListWithPageResponseDto;
 import com.example.relation.domain.user.dto.response.UserResponseDto;
 import com.example.relation.domain.user.entity.User;
 import com.example.relation.domain.user.service.UserService;
 import com.example.relation.global.response.ApiResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -35,6 +37,16 @@ public class UserController {
     ){
         return ResponseEntity.ok(ApiResponse.ok(
                 userService.getMyProfile(user)
+        ));
+    }
+
+    @GetMapping("/my/posts")
+    public ResponseEntity<ApiResponse<Post2ListWithPageResponseDto>> getMyPosts(
+            @AuthenticationPrincipal User user,
+            Pageable pageable
+    ){
+        return ResponseEntity.ok(ApiResponse.ok(
+                userService.getMyPosts(user, pageable)
         ));
     }
 
