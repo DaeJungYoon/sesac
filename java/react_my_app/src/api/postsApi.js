@@ -1,5 +1,5 @@
-import api from "./axios";
-const ENDPOINT = "/posts";
+import api from './axios';
+const ENDPOINT = '/posts';
 const postApi = {
   // 리스트 GET
   getPosts: async (params = {}) => {
@@ -16,6 +16,11 @@ const postApi = {
   // POST
   createPost: async (formData) => {
     const response = await api.post(ENDPOINT, formData);
+    return response;
+  },
+  // Comments
+  createComment: async (postId, formData) => {
+    const response = await api.post(`${ENDPOINT}/${postId}/comments`, formData);
     return response;
   },
 };
