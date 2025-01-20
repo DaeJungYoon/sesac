@@ -5,6 +5,8 @@ import com.example.relation.domain.tag.dto.TagRequestDto;
 import com.example.relation.domain.user.entity.User;
 import com.example.relation.domain.user.service.UserService;
 import com.example.relation.global.response.ApiResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,12 +19,18 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
+@Tag(name = "게시글 관리", description = "게시글 관리 관련 API")
 @RestController
 @RequestMapping("/posts")
 @RequiredArgsConstructor
 public class PostController {
     private final PostService postService;
     private final UserService userService;
+
+    @Operation(
+            summary = "게시글 작성",
+            description = "새로운 게시글을 등록합니다."
+    )
     @PostMapping
     public ResponseEntity<ApiResponse<PostResponseDto>> createPost(@Valid @RequestBody PostCreateRequestDto requestDto) {
         return ResponseEntity
