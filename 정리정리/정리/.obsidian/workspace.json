@@ -208,6 +208,8 @@
   "lastOpenFiles": [
     "deploy/docker/이미지.md",
     "deploy/docker/컨테이너.md",
+    "everydayMail/백엔드/공유 락과 배타 락 20250122.md",
+    "everydayMail/프론트엔드/이벤트 전파(event propagation) 20250122.md",
     "deploy/docker/docker 개요.md",
     "deploy/docker/volume.md",
     "deploy/무제 파일.md",
@@ -232,8 +234,6 @@
     "스터디/카페 뚝딱 기능별 필요 데이터.md",
     "스터디/카페 개설 서비스.md",
     "스터디/카페 뚝딱/카페 개설 기능.md",
-    "스터디/카페 뚝딱/회원 관리.md",
-    "JAVA/DI(Dependency Injection).md",
     "스터디/카페 뚝딱/카페 회원",
     "스터디/카페 뚝딱/카페관리자",
     "스터디/카페 뚝딱",
