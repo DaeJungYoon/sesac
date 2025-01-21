@@ -4,39 +4,51 @@
     "type": "split",
     "children": [
       {
-        "id": "13fbae50972db28d",
+        "id": "3f4e56e86cc2fbf7",
         "type": "tabs",
         "children": [
           {
-            "id": "300aeefafa8fa20b",
+            "id": "3a665a8425acc7ce",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "스터디/카페 개설 서비스.md",
+                "file": "deploy/무제 파일.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "카페 개설 서비스"
+              "title": "무제 파일"
             }
           },
           {
-            "id": "0fc7569a9d7093df",
+            "id": "4e763e86c21973b3",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "deploy/docker/volume.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "volume"
+            }
+          },
+          {
+            "id": "693030b8125b4dca",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "everydayMail/백엔드/TCP 3-way handshake 20250120.md",
+                "file": "deploy/docker/컨테이너.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TCP 3-way handshake 20250120"
+              "title": "컨테이너"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -192,110 +204,40 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "floating": {
-    "id": "676edef75f8c5107",
-    "type": "floating",
-    "children": [
-      {
-        "id": "0f0881eff2ed77e1",
-        "type": "window",
-        "children": [
-          {
-            "id": "334cddff1680b77e",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "c4ca3988bf338f35",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "JAVA/슈퍼미니프로젝트/실습 내용.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "실습 내용"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 960,
-        "y": 0,
-        "width": 960,
-        "height": 1032,
-        "maximize": false,
-        "zoom": 0
-      },
-      {
-        "id": "3d63481fe261a3f8",
-        "type": "window",
-        "children": [
-          {
-            "id": "f2cb8ce74c1420c1",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "4e7b55808ba54b5d",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "JAVA/security/AuthenticationManager2.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "AuthenticationManager2"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 960,
-        "y": 0,
-        "width": 960,
-        "height": 1032,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "0fc7569a9d7093df",
+  "active": "693030b8125b4dca",
   "lastOpenFiles": [
-    "everydayMail/프론트엔드/script 태그에서 async와 defer 20250120.md",
-    "everydayMail/백엔드/TCP 3-way handshake 20250120.md",
-    "스터디/카페 뚝딱/카페 회원/게시글 작성.md",
+    "deploy/docker/이미지.md",
+    "deploy/docker/컨테이너.md",
+    "deploy/docker/docker 개요.md",
+    "deploy/docker/volume.md",
+    "deploy/무제 파일.md",
+    "deploy/docker",
+    "everydayMail/백엔드/동기와 비동기 20250121.md",
+    "deploy",
+    "everydayMail/백엔드/얕은 복사와 깊은 복사 20250109.md",
+    "everydayMail/백엔드/@Component, @Controller, @Service, @Repository 20250116.md",
+    "everydayMail/백엔드/동기 방식으로 외부 서비스를 호출할 때 외부 서비스 장애 20250117.md",
+    "everydayMail/프론트엔드/CommonJS와 ES Module 20250121.md",
+    "스터디/카페 뚝딱/카페 관리 기능 (개설된 카페를 우리가 관리).md",
+    "스터디/카페 뚝딱/개설된 카페 목록 보여주기.md",
+    "스터디/카페 뚝딱/회원가입 및 로그인.md",
+    "스터디/카페 뚝딱/카페관리자/카페 정보 관리 (이름, 주제 등.. 변경 가능).md",
+    "스터디/카페 뚝딱/카페관리자/게시판 관리(게시글 관리).md",
+    "스터디/카페 뚝딱/카페관리자/멤버 관리 (일반 회원).md",
     "스터디/카페 뚝딱/카페 회원/나의 활동.md",
     "스터디/카페 뚝딱/카페 회원/댓글 작성.md",
-    "스터디/카페 뚝딱/카페관리자/카페 정보 관리 (이름, 주제 등.. 변경 가능).md",
-    "스터디/카페 뚝딱/카페관리자/멤버 관리 (일반 회원).md",
-    "스터디/카페 뚝딱/카페관리자/게시판 관리(게시글 관리).md",
-    "스터디/카페 뚝딱/카페 가입.md",
-    "스터디/카페 뚝딱/개설된 카페 목록 보여주기.md",
+    "스터디/카페 뚝딱/카페 회원/게시글 작성.md",
     "스터디/카페 뚝딱/마이페이지.md",
-    "스터디/카페 뚝딱/카페 개설 기능.md",
-    "스터디/reference.md",
-    "스터디/카페 개설 서비스.md",
+    "스터디/카페 뚝딱/카페 가입.md",
     "스터디/카페 뚝딱 기능별 필요 데이터.md",
-    "스터디/카페 뚝딱/회원가입 및 로그인.md",
-    "스터디/카페 뚝딱/카페 관리 기능 (개설된 카페를 우리가 관리).md",
-    "스터디/카페 뚝딱/카페 개설자 관리페이지 기능 카페 개설자가 카페를 관리하는 페이지.md",
+    "스터디/카페 개설 서비스.md",
+    "스터디/카페 뚝딱/카페 개설 기능.md",
+    "스터디/카페 뚝딱/회원 관리.md",
+    "JAVA/DI(Dependency Injection).md",
     "스터디/카페 뚝딱/카페 회원",
     "스터디/카페 뚝딱/카페관리자",
-    "스터디/카페 뚝딱/회원 관리.md",
     "스터디/카페 뚝딱",
-    "JAVA/CORS.md",
     "스터디",
-    "JAVA/어노테이션/Spring/Spring Web/@PathVariable.md",
-    "everydayMail/프론트엔드/자바스크립트 함수 20250117.md",
-    "everydayMail/백엔드/동기 방식으로 외부 서비스를 호출할 때 외부 서비스 장애 20250117.md",
-    "JAVA/수업 중 트러블/react이랑 spring 연결중.md",
-    "everydayMail/프론트엔드/자바스크립트 함수 2025.md",
-    "특강/새싹.md",
     "Pasted image 20250116184334.png",
     "JAVA/어노테이션/무제 폴더",
     "JAVA/security",
@@ -307,8 +249,6 @@
     "JAVA/수업 중 트러블/사진/Pasted image 20250115140543.png",
     "Pasted image 20250115140539.png",
     "취업 자료",
-    "JAVA/수업 중 필기",
-    "JAVA/슈퍼미니프로젝트/트러블슈팅",
     "Pasted image 20250106114210.png",
     "Pasted image 20250106114130.png",
     "JAVA/슈퍼미니프로젝트/img/Pasted image 20250106114032.png"
