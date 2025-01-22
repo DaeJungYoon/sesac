@@ -39,16 +39,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deploy/docker/컨테이너.md",
+                "file": "deploy/docker/이미지.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "컨테이너"
+              "title": "이미지"
+            }
+          },
+          {
+            "id": "bb435ee50f7a18c0",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "deploy/docker/Drawing 2025-01-22 14.17.52.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-01-22 14.17.52.excalidraw"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -204,9 +216,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "693030b8125b4dca",
+  "active": "bb435ee50f7a18c0",
   "lastOpenFiles": [
     "deploy/docker/이미지.md",
+    "deploy/docker/Drawing 2025-01-22 14.17.52.excalidraw.md",
     "deploy/docker/컨테이너.md",
     "everydayMail/백엔드/공유 락과 배타 락 20250122.md",
     "everydayMail/프론트엔드/이벤트 전파(event propagation) 20250122.md",
@@ -233,7 +246,6 @@
     "스터디/카페 뚝딱/카페 가입.md",
     "스터디/카페 뚝딱 기능별 필요 데이터.md",
     "스터디/카페 개설 서비스.md",
-    "스터디/카페 뚝딱/카페 개설 기능.md",
     "스터디/카페 뚝딱/카페 회원",
     "스터디/카페 뚝딱/카페관리자",
     "스터디/카페 뚝딱",
